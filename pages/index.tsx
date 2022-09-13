@@ -1,8 +1,11 @@
+import React from 'react'
 import type { NextPage } from 'next'
-import Head from 'next/head'
-import Image from 'next/image'
+
+// Import components
 import PromotionBanner from '../components/PromotionBanner'
 import CategoryGallery from '../components/CategoryGallery'
+
+// Import styles
 import styles from '../styles/HomePage.module.css'
 
 const HomePage: NextPage = () => {
