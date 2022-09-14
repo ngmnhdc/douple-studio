@@ -33,6 +33,12 @@ button {
     outline: none;
 }
 
+button:hover {
+    cursor: pointer;
+    opacity: 0.85;
+    transition: all 0.5 ease-in-out;
+}
+
 
 /* @media (prefers-color-scheme: dark) {
     html {

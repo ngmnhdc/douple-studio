@@ -3,6 +3,7 @@ import type { AppProps } from 'next/app'
 
 // Import components
 import Header from '../components/Header'
+import Footer from '../components/Footer'
 
 // Import styles
 import '../styles/globals.css'
@@ -17,6 +18,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       </Head>
       <Header />
       <Component {...pageProps} />
+      <Footer />
     </>
   )
 }
