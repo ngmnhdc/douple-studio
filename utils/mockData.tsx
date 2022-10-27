@@ -1,3 +1,50 @@
+export const footerItemList = [
+  {
+    "id": 1,
+    "title": "Company Info",
+    "child": [
+      {
+        "id": 1,
+        "title": "About Us"
+      },
+      {
+        "id": 2,
+        "title": "Store Location"
+      },
+      {
+        "id": 3,
+        "title": "Blog"
+      },
+      {
+        "id": 4,
+        "title": "Career"
+      },
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Help & Support",
+    "child": [
+      {
+        "id": 1,
+        "title": "Help Center"
+      },
+      {
+        "id": 2,
+        "title": "FAQ"
+      },
+      {
+        "id": 3,
+        "title": "Terms and Conditions"
+      },
+      {
+        "id": 4,
+        "title": "Size Chart"
+      },
+    ]
+  }
+]
+
 export const productList = [
   {
     "id": 530091965,
@@ -6,19 +53,19 @@ export const productList = [
     "price": 599000,
   },
   {
-    "id": 530091965,
+    "id": 530091966,
     "name": "Short sleeve tie-dye T-shirt",
     "image": "https://static.pullandbear.net/2/photos//2022/I/0/2/p/8246/561/250/8246561250_2_6_8.jpg?t=1658241381001&imwidth=563",
     "price": 599000,
   },
   {
-    "id": 530091965,
+    "id": 530091967,
     "name": "Short sleeve tie-dye T-shirt",
     "image": "https://static.pullandbear.net/2/photos//2022/I/0/2/p/8246/561/250/8246561250_2_6_8.jpg?t=1658241381001&imwidth=563",
     "price": 599000,
   },
   {
-    "id": 530091965,
+    "id": 530091968,
     "name": "Short sleeve tie-dye T-shirt",
     "image": "https://static.pullandbear.net/2/photos//2022/I/0/2/p/8246/561/250/8246561250_2_6_8.jpg?t=1658241381001&imwidth=563",
     "price": 599000,

@@ -24,10 +24,11 @@ const CategoryGallery = () => {
     <div className={styles["container"]}>
       {categoryList.map(({ id, name, image }) => (
         <div className={styles["category-item"]} key={id}>
-          <img
-            className={styles["category-image"]}
-            src={image}
-            alt={name} />
+          <div className={styles["category-image"]}>
+            <img
+              src={image}
+              alt={name} />
+          </div>
           <div className={styles["category-name"]}>{name}</div>
         </div>
       ))}

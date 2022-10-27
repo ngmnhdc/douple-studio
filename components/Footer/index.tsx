@@ -1,13 +1,27 @@
 import React from 'react'
 import styles from './index.module.css'
-import { FacebookIcon, TwitterIcon, InstagramIcon, TiktokIcon } from '../SvgIcon'
+import { FacebookIcon, TwitterIcon, InstagramIcon, TiktokIcon, SmallChevronRightIcon } from '../SvgIcon'
+import { footerItemList } from '../../utils/mockData'
 
 const Footer = () => {
   return (
     <div className={styles["container"]}>
       <div className={styles["container-inner"]}>
         <div className={styles["footer-left"]}>
-          <div className={styles["footer-column"]}>
+          {footerItemList.map(itemList => (
+            <div className={styles["footer-column"]} key={itemList.id}>
+              <h3 className={styles["footer-heading"]}>{itemList.title}</h3>
+              <ul className={styles["footer-item-list"]}>
+                {itemList.child.map(item => (
+                  <li className={styles["footer-item"]} key={item.id}>
+                    <SmallChevronRightIcon />
+                    <span>{item.title}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+          {/* <div className={styles["footer-column"]}>
             <h3 className={styles["footer-heading"]}>Company info</h3>
             <ul className={styles["footer-item-list"]}>
               <li className={styles["footer-item"]}>About us</li>
@@ -24,7 +38,7 @@ const Footer = () => {
               <li className={styles["footer-item"]}>Terms and Conditions</li>
               <li className={styles["footer-item"]}>Size Chart</li>
             </ul>
-          </div>
+          </div> */}
           <div className={styles["footer-column"]}>
             <h3 className={styles["footer-heading"]}>Follow us</h3>
             <div className={styles["footer-social"]}>
