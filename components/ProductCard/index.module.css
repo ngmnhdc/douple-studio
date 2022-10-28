@@ -35,3 +35,24 @@
 .product-price {
     font-weight: 400;
 }
+
+@media (max-width: 768px) {
+    .container {
+        width: calc(25% - 15px);
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        width: calc(50% - 6px);
+        margin-bottom: 8px;
+    }
+    .product-name {
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        word-break: break-word;
+    }
+}

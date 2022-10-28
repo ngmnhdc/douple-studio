@@ -23,14 +23,14 @@ const CategoryGallery = () => {
   return (
     <div className={styles["container"]}>
       {categoryList.map(({ id, name, image }) => (
-        <div className={styles["category-item"]} key={id}>
+        <a className={styles["category-item"]} key={id} href={`/collection/${name}`}>
           <div className={styles["category-image"]}>
             <img
               src={image}
               alt={name} />
           </div>
           <div className={styles["category-name"]}>{name}</div>
-        </div>
+        </a>
       ))}
     </div>
   )

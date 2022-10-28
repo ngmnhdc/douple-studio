@@ -21,24 +21,6 @@ const Footer = () => {
               </ul>
             </div>
           ))}
-          {/* <div className={styles["footer-column"]}>
-            <h3 className={styles["footer-heading"]}>Company info</h3>
-            <ul className={styles["footer-item-list"]}>
-              <li className={styles["footer-item"]}>About us</li>
-              <li className={styles["footer-item"]}>Store location</li>
-              <li className={styles["footer-item"]}>Blog</li>
-              <li className={styles["footer-item"]}>Career</li>
-            </ul>
-          </div>
-          <div className={styles["footer-column"]}>
-            <h3 className={styles["footer-heading"]}>Help & Support</h3>
-            <ul className={styles["footer-item-list"]}>
-              <li className={styles["footer-item"]}>Help Center</li>
-              <li className={styles["footer-item"]}>FAQ</li>
-              <li className={styles["footer-item"]}>Terms and Conditions</li>
-              <li className={styles["footer-item"]}>Size Chart</li>
-            </ul>
-          </div> */}
           <div className={styles["footer-column"]}>
             <h3 className={styles["footer-heading"]}>Follow us</h3>
             <div className={styles["footer-social"]}>

@@ -7,7 +7,7 @@
 .container-inner {
     max-width: 1224px;
     margin: 0 auto;
-    padding: 40px 0;
+    padding: 40px 20px;
     display: flex;
     gap: 24px;
 }
@@ -57,6 +57,11 @@
     gap: 8px;
     margin-top: 16px;
     padding-right: 40px;
+}
+
+.footer-social svg:hover {
+    cursor: pointer;
+    opacity: 0.9;
 }
 
 .footer-right {
@@ -121,4 +126,58 @@
     text-align: center;
     font-size: 14px;
     color: #222;
+}
+
+@media screen and (max-width: 1024px) {
+    .footer-social {
+        padding-right: 0;
+    }
+}
+
+@media screen and (max-width: 838px) {
+    .container-inner {
+        padding: 40px 50px;
+        flex-direction: column-reverse;
+    }
+    .footer-right {
+        margin-bottom: 20px;
+    }
+    .footer-social {
+        padding-right: 20px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .container-inner {
+        padding: 20px;
+    }
+    .footer-social {
+        flex-wrap: wrap;
+        width: 100px;
+        gap: 8px;
+        justify-content: start;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .container-inner {
+        gap: 10px;
+    }
+    .footer-social {
+        padding-right: 0;
+        width: 80px;
+        row-gap: 0;
+    }
+    .footer-social svg {
+        width: 24px;
+    }
+    .footer-item-list {
+        font-size: 12px;
+        gap: 4px;
+        margin-top: 12px;
+        min-width: unset;
+    }
+    .subcribe-button {
+        padding: 8px 16px;
+    }
 }

@@ -1,17 +1,18 @@
 .wrapper {
     width: 100%;
+    padding: 0 20px;
     position: fixed;
     top: 0;
     left: 0;
     z-index: 9;
-    background-color: #fff;
+    background-color: var(--white);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
 }
 
 .container {
     width: 100%;
     max-width: 1224px;
     margin: 0 auto;
-    padding: 0 20px;
     height: 60px;
     display: flex;
     justify-content: space-between;
@@ -39,6 +40,21 @@
     line-height: 22px;
 }
 
+.block-menu-item::after {
+    content: "";
+    width: 0;
+    height: 2px;
+    background: var(--gray-2);
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: width 0.2s ease-in-out;
+}
+
+.block-menu-item:hover::after {
+    width: 100%;
+}
+
 .active::after {
     content: "";
     width: 100%;
@@ -47,6 +63,7 @@
     position: absolute;
     left: 0;
     bottom: -6px;
+    transition: width 0.2s ease-in-out;
 }
 
 .group-action {
@@ -54,4 +71,72 @@
     justify-content: space-between;
     align-items: center;
     gap: 16px;
+}
+
+.logo:hover,
+.block-menu-item:hover,
+.group-action:hover {
+    cursor: pointer;
+}
+
+.burger-menu-wrapper {
+    display: none;
+    /* position: relative; */
+}
+
+.burger-menu-icon {
+    background: none;
+    height: 100%;
+}
+
+.sidebar-menu-container {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    /* width: 40vw;
+    background: var(--white);
+    padding: 20px; */
+}
+
+.sidebar-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 40vw;
+    background: var(--white);
+    padding: 20px;
+}
+
+.sidebar-menu-item {
+    text-transform: uppercase;
+    padding: 4px;
+}
+
+.overlay {
+    width: 60vw;
+    background: rgba(255, 255, 255, 0.4);
+}
+
+@media screen and (max-width: 1024px) {
+    .block-menu {
+        gap: 20px;
+    }
+    .block-menu-item:last-child {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .burger-menu-wrapper {
+        display: block;
+    }
+    .block-menu {
+        display: none;
+    }
+    .logo {
+        margin-left: 10%;
+    }
 }

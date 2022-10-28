@@ -1,3 +1,36 @@
+export const headerMenuItem = [
+  {
+    "id": 1,
+    "url": "/",
+    "title": "Home"
+  },
+  {
+    "id": 2,
+    "url": "/collection/top",
+    "title": "Top"
+  },
+  {
+    "id": 3,
+    "url": "/collection/bottom",
+    "title": "Bottom"
+  },
+  {
+    "id": 4,
+    "url": "/collection/accessories",
+    "title": "Accessories"
+  },
+  {
+    "id": 5,
+    "url": "/collection/sale",
+    "title": "Sale"
+  },
+  {
+    "id": 6,
+    "url": "/about-us",
+    "title": "About us"
+  },
+]
+
 export const footerItemList = [
   {
     "id": 1,
