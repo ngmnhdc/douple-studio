@@ -4,6 +4,13 @@
     --black: #000;
     --gray-1: #121212;
     --gray-2: #222222;
+    --gray-3: #333333;
+    --gray-4: #555555;
+    --gray-5: #888888;
+    --gray-6: #999999;
+    --gray-7: #cecece;
+    --gray-8: #dfdfdf;
+    --gray-9: #fbfbfb;
 }
 
 * {
@@ -39,6 +46,38 @@ button:hover {
     cursor: pointer;
     opacity: 0.85;
     transition: all 0.5 ease-in-out;
+}
+
+.btn {
+    padding: 10px 20px;
+    font-size: 14px;
+    background-color: var(--gray-8);
+}
+
+.primary-btn {
+    background-color: var(--black);
+    color: var(--white);
+}
+
+.main-container {
+    width: 100%;
+    max-width: 1224px;
+    margin: 0 auto;
+    margin-top: 60px;
+    display: flex;
+    gap: 24px;
+}
+
+@media screen and (max-width: 1224px) {
+    .main-container {
+        padding: 0 20px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .main-container {
+        padding: 0 10px;
+    }
 }
 
 
