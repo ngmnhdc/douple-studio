@@ -1,0 +1,30 @@
+.accordion-item {
+    border-bottom: 1px solid var(--gray-8);
+}
+
+.accordion-heading {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    cursor: pointer;
+}
+
+.accordion-heading h3 {
+    flex: 1;
+    font-size: 1.6rem;
+    font-weight: 500;
+}
+
+.accordion-content {
+    padding: 8px 0 16px;
+    font-weight: 300;
+}
+
+.accordion-content h4 {
+    font-weight: 400;
+    margin-bottom: 4px;
+}
+
+.accordion-content h4:not(:first-child) {
+    margin-top: 8px;
+}
