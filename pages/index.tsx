@@ -1,5 +1,4 @@
 import React from 'react'
-import type { NextPage } from 'next'
 
 // Import components
 import PromotionBanner from '../components/PromotionBanner'
@@ -10,12 +9,15 @@ import Collection from '../components/Collection'
 import styles from '../styles/HomePage.module.css'
 
 // Import utils
-import { productList } from '../utils/mockData'
-import IProduct from '../utils/interfaces'
+import { IProduct } from '../utils/interfaces'
+import { getRandomProductList } from './api'
 
-const newArrivals: Array<IProduct> = productList.slice(0, 4)
+export interface IHomePageProps {
+  newArrivals: Array<IProduct>,
+  bestSeller: Array<IProduct>
+}
 
-const HomePage: NextPage = () => {
+const HomePage = ({ newArrivals, bestSeller }: IHomePageProps) => {
   return (
     <div className={styles["container"]}>
       <PromotionBanner />
@@ -26,10 +28,22 @@ const HomePage: NextPage = () => {
       />
       <Collection
         heading="Best Seller"
-        productList={newArrivals}
+        productList={bestSeller}
       />
     </div>
   )
 }
 
 export default HomePage
+
+export async function getServerSideProps() {
+  const newArrivals = await getRandomProductList()
+  const bestSeller = await getRandomProductList()
+
+  return {
+    props: {
+      newArrivals: newArrivals,
+      bestSeller: bestSeller
+    }
+  }
+}

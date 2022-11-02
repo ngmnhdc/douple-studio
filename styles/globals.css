@@ -172,6 +172,7 @@ button:hover {
     margin: 0 auto;
     margin-top: 60px;
     display: flex;
+    flex-direction: column;
     gap: 24px;
 }
 

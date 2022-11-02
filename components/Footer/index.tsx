@@ -1,6 +1,12 @@
 import React from 'react'
+
+// Import styles
 import styles from './index.module.css'
+
+// Import svg icons
 import { FacebookIcon, TwitterIcon, InstagramIcon, TiktokIcon, SmallChevronRightIcon } from '../SvgIcon'
+
+// Import utils
 import { footerItemList } from '../../utils/mockData'
 
 const Footer = () => {
@@ -47,7 +53,10 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className={styles["copyright"]}>Copyright © 2022 Douple Studio. All Rights Reserved</div>
+      <div className={styles["copyright"]}>
+        <span>Copyright © 2022 Douple Studio. </span>
+        <span>All Rights Reserve</span>
+      </div>
     </div>
   )
 }

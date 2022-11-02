@@ -160,6 +160,9 @@
 }
 
 @media screen and (max-width: 480px) {
+    .container {
+        margin-top: 20px;
+    }
     .container-inner {
         gap: 10px;
     }
@@ -179,5 +182,11 @@
     }
     .subcribe-button {
         padding: 8px 16px;
+    }
+    .copyright {
+        display: flex;
+        flex-direction: column;
+        padding: 10px 0;
+        font-size: 1.2rem;
     }
 }

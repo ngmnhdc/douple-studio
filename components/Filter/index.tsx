@@ -1,7 +1,8 @@
 import React from 'react'
-import { CheckCircleIcon } from '../SvgIcon'
 
 import styles from './index.module.css'
+
+import { CheckCircleIcon } from '../SvgIcon'
 
 const Filter = () => {
   return (

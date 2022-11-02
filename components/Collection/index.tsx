@@ -7,7 +7,7 @@ import ProductCard from '../ProductCard'
 import styles from './index.module.css'
 
 // Import utils
-import IProduct from '../../utils/interfaces'
+import { IProduct } from '../../utils/interfaces'
 
 interface ICollection {
   heading: string,
@@ -25,7 +25,8 @@ const Collection = ({ heading, productList }: ICollection) => {
             key={product.id}
             name={product.name}
             image={product.image || "https://images.unsplash.com/photo-1621466550398-ac8062907657?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=465&q=80"}
-            price={product.price || 1000000}
+            price={product.price}
+            url={product.url}
           />
         )}
       </div>

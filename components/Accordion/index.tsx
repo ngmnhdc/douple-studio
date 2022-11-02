@@ -4,7 +4,7 @@ import React from 'react'
 import styles from './index.module.css'
 
 // Import svg icons
-import { PlusIcon, MinusIcon, FacebookIcon, InstagramIcon, TwitterIcon } from '../SvgIcon'
+import { PlusIcon, MinusIcon } from '../SvgIcon'
 
 export interface IAccordionProps {
   heading: string,
