@@ -13,7 +13,7 @@ const PromotionBanner = (props: IProps) => {
       <div className={styles["banner-details"]}>
         <h2 className={styles["banner-title"]}>2022 Winter Collection</h2>
         <p className={styles["banner-description"]}>Pre-order now for 15% discount</p>
-        <button className={styles["banner-button"]}>Explore now</button>
+        <button className={`btn ${styles["banner-button"]}`}>Explore now</button>
       </div>
     </div>
   )

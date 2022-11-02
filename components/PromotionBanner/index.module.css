@@ -14,7 +14,7 @@
 .banner-details {
     position: absolute;
     width: 50%;
-    height: calc(100% - 4px);
+    height: 100%;
     padding: 5%;
     top: 0;
     display: flex;
@@ -108,5 +108,6 @@
     }
     .banner-button {
         padding: 2px 10px;
+        font-size: 1.4rem;
     }
 }

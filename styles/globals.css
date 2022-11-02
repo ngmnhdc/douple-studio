@@ -2,6 +2,8 @@
 :root {
     --white: #fff;
     --black: #000;
+    --black-10: rgba(0, 0, 0, 0.1);
+    --black-20: rgba(0, 0, 0, 0.2);
     --gray-1: #121212;
     --gray-2: #222222;
     --gray-3: #333333;
@@ -179,19 +181,10 @@ button:hover {
     }
 }
 
+
+/* 
 @media screen and (max-width: 480px) {
     .main-container {
         padding: 0 10px;
-    }
-}
-
-
-/* @media (prefers-color-scheme: dark) {
-    html {
-        color-scheme: dark;
-    }
-    body {
-        color: black;
-        background: white;
     }
 } */

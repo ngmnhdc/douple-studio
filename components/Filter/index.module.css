@@ -1,4 +1,9 @@
-.filter-group+.filter-group {
+.filter-heading {
+    font-size: 1.6rem;
+    color: var(--gray-2);
+}
+
+.filter-group {
     margin-top: 20px;
 }
 
@@ -7,11 +12,13 @@
     justify-content: center;
     align-items: center;
     margin-top: 8px;
+    font-size: 1.4rem;
+    color: var(--gray-3);
 }
 
 .group-title {
     flex: 1;
-    font-size: 16px;
+    font-size: 1.4rem;
     font-weight: 500;
 }
 
@@ -27,6 +34,7 @@
 .color-filter {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
     gap: 8px;
 }
 
@@ -35,7 +43,7 @@
     width: 32px;
     height: 32px;
     font-size: 12px;
-    border: 1px solid #222;
+    border: 1px solid var(--gray-5);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -61,7 +69,7 @@
 
 .size-item:hover,
 .color-item:hover::before {
-    border: 2px solid #222;
+    border: 2px solid var(--gray-4);
 }
 
 .color-item svg {
@@ -135,16 +143,15 @@
     width: 100%;
     height: 45px;
     align-items: center;
+    font-size: 1.4rem;
 }
 
 .field input {
     width: 100%;
-    /* height: 100%; */
     outline: none;
     font-size: 14px;
     margin-left: 12px;
     padding: 4px;
-    /* border-radius: 5px; */
     text-align: center;
     border: 1px solid #999;
     appearance: textfield;
@@ -175,4 +182,7 @@
 
 .filter-actions button {
     flex: 1;
+    font-size: 1.4rem;
+    line-height: 2.4rem;
+    padding: 6px 20px;
 }

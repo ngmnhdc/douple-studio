@@ -6,6 +6,7 @@ import styles from './index.module.css'
 const Filter = () => {
   return (
     <>
+      <h2 className={styles["filter-heading"]}>Filters</h2>
       <div className={styles["filter-group"]}>
         <div className={styles["group-heading"]}>
           <h3 className={styles["group-title"]}>Price</h3>
