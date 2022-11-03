@@ -2,7 +2,7 @@ import React from 'react'
 import styles from './index.module.css'
 
 // Import utils
-import { categoryList } from '../../utils/mockData'
+import { categoryList } from '../../utils/data'
 
 const CategoryGallery = () => {
   return (

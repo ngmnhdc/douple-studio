@@ -14,7 +14,7 @@ import { IProduct, IProductDetail } from '../../utils/interfaces'
 
 // Import utils
 import { formatPrice } from '../../utils'
-import { compositionAndCare, socialMediaShare } from '../../utils/mockData'
+import { colorArray, compositionAndCare, socialMediaShare } from '../../utils/data'
 import { getProductDetail, getRandomProductList } from '../api'
 import Collection from '../../components/Collection'
 
@@ -52,13 +52,9 @@ const ProductPage = ({ productDetail, relatedItems, recentlyViewed }: IProductPa
           <h2 className={styles["product-name"]}>{productDetail.name}</h2>
           <span className={styles["product-price"]}>{formatPrice(productDetail?.price)}</span>
           <div className={styles["product-colors"]}>
-            <div className={styles["color-item"]} style={{ color: "#75AB79" }}></div>
-            <div className={styles["color-item"]} style={{ color: "#DCC77B" }}></div>
-            <div className={styles["color-item"]} style={{ color: "#963" }}></div>
-            <div className={styles["color-item"]} style={{ color: "#543" }}></div>
-            <div className={styles["color-item"]} style={{ color: "#789" }}></div>
-            <div className={styles["color-item"]} style={{ color: "#6465B7" }}></div>
-            <div className={styles["color-item"]} style={{ color: "#246" }}></div>
+            {productDetail?.colors.map(({ id, name }) => (
+              <a key={id} className={styles["color-item"]} style={{ color: `${colorArray[id]}` }} title={name}></a>
+            ))}
           </div>
           <select className={`select ${styles["product-size"]}`}>
             <option value="Default" disabled>Choose size</option>

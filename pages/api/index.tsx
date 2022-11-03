@@ -1,4 +1,4 @@
-import { productList } from "../../utils/mockData"
+import { productList } from "../../utils/data"
 
 export const getCollectionList = (collectionName: string) => {
   const response = productList.filter((item) => item.category === collectionName);

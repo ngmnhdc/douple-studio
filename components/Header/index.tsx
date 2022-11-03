@@ -8,7 +8,7 @@ import styles from './index.module.css'
 import { BurgerIcon, CartIcon, CloseIcon, Logo, SearchIcon, UserIcon } from '../SvgIcon'
 
 // Import utils
-import { headerMenuItem } from '../../utils/mockData'
+import { headerMenuItem } from '../../utils/data'
 
 const Header = () => {
   const currentUrl = useRouter().pathname

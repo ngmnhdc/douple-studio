@@ -27,7 +27,7 @@ const Collection = ({ collectionName, productList }: ICollectionProps) => {
         <div className={styles["list-container"]}>
           <div className={styles["heading"]}>
             <h2 className={styles["collection-name"]}>{collectionName}</h2>
-            <p className={styles["items-counter"]}>24 items</p>
+            <p className={styles["items-counter"]}>{`${productList.length} items`}</p>
           </div>
           <div className={styles["product-list"]}>
             {productList.map((item: IProduct) =>

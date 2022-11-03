@@ -12,7 +12,7 @@ export interface IProductDetail {
   image: string,
   price: string,
   category: string,
-  colors: Array<{ id: string, name: string }>,
+  colors: Array<{ id: number, name: string }>,
   image_list: Array<string>,
   description: string,
   url: string

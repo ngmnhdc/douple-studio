@@ -87,15 +87,17 @@
     width: 32px;
     height: 32px;
     font-size: 12px;
-    border: 1px solid var(--gray-2);
+    border: 1px solid var(--gray-6);
+    background: currentColor;
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    border: none;
     position: relative;
 }
 
+
+/* 
 .color-item::before {
     position: absolute;
     left: 0;
@@ -106,10 +108,10 @@
     background: currentColor;
     opacity: 0.8;
     box-sizing: border-box;
-}
+} */
 
-.color-item:hover::before {
-    border: 2px solid var(--gray-2);
+.color-item:hover {
+    border: 2px solid var(--gray-4);
 }
 
 .size-measurement {

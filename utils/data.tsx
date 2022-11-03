@@ -151,8 +151,8 @@ export const productList = [
     "category": "top",
     "colors": [
       {
-        "id": 250,
-        "name": "WHITE"
+        "id": 0,
+        "name": "white"
       }
     ],
     "image_list": [
@@ -176,8 +176,20 @@ export const productList = [
     "category": "top",
     "colors": [
       {
-        "id": 527,
-        "name": "MEDIUM GREEN"
+        "id": 4,
+        "name": "yellow"
+      },
+      {
+        "id": 5,
+        "name": "pink"
+      },
+      {
+        "id": 6,
+        "name": "blue"
+      },
+      {
+        "id": 8,
+        "name": "green"
       }
     ],
     "image_list": [
@@ -200,8 +212,8 @@ export const productList = [
     "category": "top",
     "colors": [
       {
-        "id": 800,
-        "name": "BLACK"
+        "id": 10,
+        "name": "black"
       }
     ],
     "image_list": [
@@ -223,40 +235,40 @@ export const productList = [
     "category": "top",
     "colors": [
       {
-        "id": 250,
-        "name": "WHITE"
+        "id": 0,
+        "name": "white"
       },
       {
-        "id": 505,
-        "name": "KHAKI"
+        "id": 1,
+        "name": "beige"
       },
       {
-        "id": 300,
-        "name": "YELLOW"
+        "id": 2,
+        "name": "khaki"
       },
       {
-        "id": 400,
-        "name": "BLUE"
+        "id": 4,
+        "name": "yellow"
       },
       {
-        "id": 500,
-        "name": "GREEN"
+        "id": 6,
+        "name": "blue"
       },
       {
-        "id": 622,
-        "name": "ROSE PINK"
+        "id": 8,
+        "name": "green"
       },
       {
-        "id": 802,
-        "name": "GREY"
+        "id": 5,
+        "name": "pink"
       },
       {
-        "id": 712,
-        "name": "ECRU"
+        "id": 9,
+        "name": "gray"
       },
       {
-        "id": 800,
-        "name": "BLACK"
+        "id": 10,
+        "name": "black"
       }
     ],
     "image_list": [
@@ -278,28 +290,28 @@ export const productList = [
     "category": "top",
     "colors": [
       {
-        "id": 300,
-        "name": "YELLOW"
+        "id": 1,
+        "name": "beige"
       },
       {
-        "id": 400,
-        "name": "BLUE"
+        "id": 4,
+        "name": "yellow"
       },
       {
-        "id": 500,
-        "name": "GREEN"
+        "id": 6,
+        "name": "blue"
       },
       {
-        "id": 622,
-        "name": "ROSE PINK"
+        "id": 8,
+        "name": "green"
       },
       {
-        "id": 802,
-        "name": "GREY"
+        "id": 5,
+        "name": "pink"
       },
       {
-        "id": 712,
-        "name": "ECRU"
+        "id": 9,
+        "name": "gray"
       }
     ],
     "image_list": [
@@ -321,8 +333,8 @@ export const productList = [
     "category": "top",
     "colors": [
       {
-        "id": 250,
-        "name": "WHITE"
+        "id": 0,
+        "name": "white"
       }
     ],
     "image_list": [
@@ -344,36 +356,36 @@ export const productList = [
     "category": "top",
     "colors": [
       {
-        "id": 250,
-        "name": "WHITE"
+        "id": 0,
+        "name": "white"
       },
       {
-        "id": 300,
-        "name": "YELLOW"
+        "id": 1,
+        "name": "beige"
       },
       {
-        "id": 400,
-        "name": "BLUE"
+        "id": 4,
+        "name": "yellow"
       },
       {
-        "id": 500,
-        "name": "GREEN"
+        "id": 6,
+        "name": "blue"
       },
       {
-        "id": 622,
-        "name": "ROSE PINK"
+        "id": 8,
+        "name": "green"
       },
       {
-        "id": 802,
-        "name": "GREY"
+        "id": 5,
+        "name": "pink"
       },
       {
-        "id": 712,
-        "name": "ECRU"
+        "id": 9,
+        "name": "gray"
       },
       {
-        "id": 800,
-        "name": "BLACK"
+        "id": 10,
+        "name": "black"
       }
     ],
     "image_list": [
@@ -395,32 +407,28 @@ export const productList = [
     "category": "top",
     "colors": [
       {
-        "id": 250,
-        "name": "WHITE"
+        "id": 0,
+        "name": "white"
       },
       {
-        "id": 622,
-        "name": "ROSE PINK"
+        "id": 1,
+        "name": "beige"
       },
       {
-        "id": 802,
-        "name": "GREY"
+        "id": 5,
+        "name": "pink"
       },
       {
-        "id": 700,
-        "name": "BROWN"
+        "id": 9,
+        "name": "gray"
       },
       {
-        "id": 710,
-        "name": "BEIGE"
+        "id": 3,
+        "name": "brown"
       },
       {
-        "id": 712,
-        "name": "ECRU"
-      },
-      {
-        "id": 800,
-        "name": "BLACK"
+        "id": 10,
+        "name": "black"
       }
     ],
     "image_list": [
@@ -442,8 +450,8 @@ export const productList = [
     "category": "top",
     "colors": [
       {
-        "id": 250,
-        "name": "WHITE"
+        "id": 0,
+        "name": "white"
       }
     ],
     "image_list": [
@@ -465,20 +473,20 @@ export const productList = [
     "category": "top",
     "colors": [
       {
-        "id": 250,
-        "name": "WHITE"
+        "id": 0,
+        "name": "white"
       },
       {
-        "id": 800,
-        "name": "BLACK"
+        "id": 10,
+        "name": "black"
       },
       {
-        "id": 802,
-        "name": "GREY"
+        "id": 9,
+        "name": "gray"
       },
       {
-        "id": 401,
-        "name": "NAVY"
+        "id": 7,
+        "name": "navy"
       }
     ],
     "image_list": [
@@ -500,8 +508,8 @@ export const productList = [
     "category": "top",
     "colors": [
       {
-        "id": 802,
-        "name": "GREY"
+        "id": 9,
+        "name": "gray"
       },
     ],
     "image_list": [
@@ -523,8 +531,8 @@ export const productList = [
     "category": "top",
     "colors": [
       {
-        "id": 250,
-        "name": "WHITE"
+        "id": 0,
+        "name": "white"
       }
     ],
     "image_list": [
@@ -538,4 +546,32 @@ export const productList = [
     "description": "White short sleeve cotton T-shirt with contrast graphics and slogan, and a round neck.",
     "url": "white-tshirt-with-graphic-detail-l04244586",
   }
+]
+
+export const colorArray = [
+  "#ffffff",
+  "#fae7b5",
+  "#dcc77b",
+  "#8b5a2b",
+  "#ffd568",
+  "#e4aec5",
+  "#7ac5cd",
+  "#224466",
+  "#75ab79",
+  "#999999",
+  "#121212"
+]
+
+export const colorNames = [
+  "white",
+  "beige",
+  "khaki",
+  "brown",
+  "yellow",
+  "pink",
+  "blue",
+  "navy",
+  "green",
+  "gray",
+  "black"
 ]

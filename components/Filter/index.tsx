@@ -2,7 +2,7 @@ import React from 'react'
 
 import styles from './index.module.css'
 
-import { CheckCircleIcon } from '../SvgIcon'
+import { colorArray, colorNames } from '../../utils/data'
 
 const Filter = () => {
   return (
@@ -53,27 +53,12 @@ const Filter = () => {
           <span className={styles["group-clear"]}>x</span>
         </div>
         <div className={`${styles["group-content"]} ${styles["color-filter"]}`}>
-          <div className={styles["color-item"]} style={{ color: "#75AB79" }}>
+          {/* <div className={styles["color-item"]} style={{ color: "#75AB79" }}>
             <CheckCircleIcon />
-          </div>
-          <div className={styles["color-item"]} style={{ color: "#DCC77B" }}>
-            <CheckCircleIcon />
-          </div>
-          <div className={styles["color-item"]} style={{ color: "#963" }}>
-            <CheckCircleIcon />
-          </div>
-          <div className={styles["color-item"]} style={{ color: "#543" }}>
-            <CheckCircleIcon />
-          </div>
-          <div className={styles["color-item"]} style={{ color: "#789" }}>
-            <CheckCircleIcon />
-          </div>
-          <div className={styles["color-item"]} style={{ color: "#6465B7" }}>
-            <CheckCircleIcon />
-          </div>
-          <div className={styles["color-item"]} style={{ color: "#246" }}>
-            <CheckCircleIcon />
-          </div>
+          </div> */}
+          {colorArray.map((color, idx) => (
+            <a key={idx} className={styles["color-item"]} style={{ color: `${color}` }} title={`${colorNames[idx]}`}></a>
+          ))}
         </div>
       </div>
       <div className={styles["filter-actions"]}>

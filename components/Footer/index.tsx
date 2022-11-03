@@ -7,7 +7,7 @@ import styles from './index.module.css'
 import { FacebookIcon, TwitterIcon, InstagramIcon, TiktokIcon, SmallChevronRightIcon } from '../SvgIcon'
 
 // Import utils
-import { footerItemList } from '../../utils/mockData'
+import { footerItemList } from '../../utils/data'
 
 const Footer = () => {
   return (
