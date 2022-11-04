@@ -10,7 +10,6 @@ import { headerMenuItem } from '../../utils/data'
 const Breadcrumb = () => {
   const router = useRouter()
   const parts = router.asPath.split('/')
-  console.log(parts)
 
   return (
     <div className={styles["wrapper"]}>

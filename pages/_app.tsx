@@ -13,7 +13,6 @@ import '../styles/globals.css'
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter()
   const currentUrl = router.asPath
-  console.log(currentUrl)
 
   return (
     <>
