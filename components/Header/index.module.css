@@ -27,8 +27,10 @@
 
 .block-menu {
     display: flex;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     align-items: center;
+    flex: 1;
+    padding-left: 64px;
     gap: 32px;
 }
 
@@ -77,6 +79,29 @@
 .block-menu-item:hover,
 .group-action:hover {
     cursor: pointer;
+}
+
+.search-icon {
+    position: relative;
+}
+
+.search-input {
+    position: absolute;
+    top: -16px;
+    right: -6px;
+    height: 32px;
+    width: 240px;
+    display: flex;
+    align-items: center;
+    font-size: 1.4rem;
+    font-weight: 300;
+    border: 1px solid var(--gray-8);
+    background-color: var(--white)
+}
+
+.search-input input {
+    width: calc(100% - 25px);
+    padding: 4px 8px;
 }
 
 .burger-menu-wrapper {
@@ -138,5 +163,15 @@
     }
     .logo {
         margin-left: 10%;
+    }
+    .search-icon {
+        position: unset;
+    }
+    .search-input {
+        top: 60px;
+        left: 0;
+        height: 40px;
+        width: 100vw;
+        box-shadow: 0px 4px 4px var(--black-10);
     }
 }

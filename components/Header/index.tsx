@@ -11,8 +11,12 @@ import { BurgerIcon, CartIcon, CloseIcon, Logo, SearchIcon, UserIcon } from '../
 import { headerMenuItem } from '../../utils/data'
 
 const Header = () => {
-  const currentUrl = useRouter().pathname
+  const router = useRouter()
+  const currentUrl = router.asPath
+
   const [toggleSidebarMenu, setToggleSidebarMenu] = React.useState<boolean>(false)
+  const [toggleSearch, setToggleSearch] = React.useState<boolean>(false)
+  const [searchQuery, setSearchQuery] = React.useState<string>("")
 
   return (
     <div className={styles["wrapper"]}>
@@ -57,8 +61,28 @@ const Header = () => {
           ))}
         </ul>
         <ul className={styles["group-action"]}>
-          <li className={styles["search-icon"]}>
-            <SearchIcon />
+          <li className={styles["search-icon"]} onClick={() => setToggleSearch(true)}>
+            {toggleSearch
+              ? (<div className={styles["search-input"]}>
+                <input
+                  id="search-input"
+                  type="text"
+                  placeholder="Search product"
+                  autoFocus
+                  onBlur={() => setToggleSearch(false)}
+                  onChange={(event) => setSearchQuery(event.target.value.toLocaleLowerCase())}
+                  onKeyPress={(event) => {
+                    if (event.key === "Enter") {
+                      if (searchQuery)
+                        router.push(`/search/${searchQuery}`)
+                    }
+                  }}
+                />
+                <SearchIcon />
+                {/* <div onClick={() => router.push(`/search/${searchQuery}`)}><SearchIcon /></div> */}
+              </div>)
+              : <SearchIcon />
+            }
           </li>
           <li className={styles["cart-icon"]}>
             <CartIcon />

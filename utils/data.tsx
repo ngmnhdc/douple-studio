@@ -394,7 +394,7 @@ export const productList = [
       "https://static.pullandbear.net/2/photos//2022/I/0/2/p/8242/500/505/8242500505_2_3_8.jpg?t=1656668953602",
       "https://static.pullandbear.net/2/photos//2022/I/0/2/p/8242/500/505/8242500505_2_4_8.jpg?t=1656668953602",
       "https://static.pullandbear.net/2/photos//2022/I/0/2/p/8242/500/505/8242500505_2_6_8.jpg?t=1656668953602",
-      "https://static.pullandbear.net/2/photos//2022/I/0/2/p/8242/500/505/8242500505_2_7_8.jpg?t=1656668953602",
+      "https://static.pullandbear.net/2/photos//2022/I/0/2/p/8242/500/505/8242500505_2_8_8.jpg?t=1656668953602",
     ],
     "description": "Basic short sleeve T-shirt with a round neck. Made of 100% cotton.",
     "url": "basic-short-sleeve-cotton-tshirt-l08242500",

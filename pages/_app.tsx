@@ -1,14 +1,20 @@
 import Head from 'next/head'
 import type { AppProps } from 'next/app'
+import { useRouter } from 'next/router'
 
 // Import components
 import Header from '../components/Header'
 import Footer from '../components/Footer'
+import Breadcrumb from '../components/Breadcrumb'
 
 // Import styles
 import '../styles/globals.css'
 
 function MyApp({ Component, pageProps }: AppProps) {
+  const router = useRouter()
+  const currentUrl = router.asPath
+  console.log(currentUrl)
+
   return (
     <>
       <Head>
@@ -17,6 +23,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <link rel="icon" type="image/png" href="https://firebasestorage.googleapis.com/v0/b/douple-studio.appspot.com/o/logo%2Flogo-icon_white.png?alt=media&token=5aa8e8ee-1d58-4b01-bfbf-8bbadc386e53" />
       </Head>
       <Header />
+      {currentUrl !== "/" && <Breadcrumb />}
       <Component {...pageProps} />
       <Footer />
     </>

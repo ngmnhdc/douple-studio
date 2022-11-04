@@ -1,13 +1,11 @@
 import { productList } from "../../utils/data"
 
 export const getCollectionList = (collectionName: string) => {
-  const response = productList.filter((item) => item.category === collectionName);
-  return response;
+  return productList.filter((item) => item.category === collectionName);
 }
 
 export const getProductDetail = (slug: string) => {
-  const response = productList.filter((item) => item.url === slug);
-  return response;
+  return productList.filter((item) => item.url === slug);
 }
 
 export const getRandomProductList = () => {
@@ -21,4 +19,8 @@ export const getRandomProductList = () => {
     }
   }
   return randomProductList;
+}
+
+export const getSearchResults = (query: string) => {
+  return productList.filter(product => product.name.toLocaleLowerCase().indexOf(query) !== -1)
 }

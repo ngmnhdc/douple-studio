@@ -1,0 +1,38 @@
+.wrapper {
+    width: 100%;
+    padding: 0 20px;
+    margin-top: 60px;
+    background-color: var(--gray-9);
+}
+
+.container {
+    width: 100%;
+    max-width: 1224px;
+    margin: 0 auto;
+    /* height: 50px; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.breadcrumb-list {
+    display: flex;
+    justify-content: center;
+    line-height: 16px;
+    padding: 16px 0;
+}
+
+.breadcrumb-item {
+    text-transform: uppercase;
+}
+
+.breadcrumb-item:not(:last-child) {
+    color: var(--gray-6);
+}
+
+.breadcrumb-item:not(:last-child)::after {
+    content: '/';
+    margin: 0 8px;
+}
