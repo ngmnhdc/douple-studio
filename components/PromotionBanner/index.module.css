@@ -26,14 +26,14 @@
 }
 
 .banner-title {
-    color: #fff;
+    color: var(--white);
     font-size: 56px;
     font-weight: 600;
     text-transform: uppercase;
 }
 
 .banner-description {
-    color: #fff;
+    color: var(--white);
     font-size: 24px;
     font-weight: 300;
     margin-top: 16px;
@@ -49,7 +49,7 @@
     padding: 8px 20px;
     gap: 8px;
     line-height: 24px;
-    background: #fff;
+    background: var(--white);
     border: none;
     outline: none;
 }

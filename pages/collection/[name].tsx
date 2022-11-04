@@ -9,6 +9,8 @@ import ProductCard from '../../components/ProductCard'
 
 // Import utils
 import { IProduct } from '../../utils/interfaces';
+
+// Import fake api
 import { getCollectionList } from '../api';
 
 export interface ICollectionProps {
@@ -35,7 +37,7 @@ const Collection = ({ collectionName, productList }: ICollectionProps) => {
                 id={item.id}
                 key={item.id}
                 name={item.name}
-                image={item.image || "https://images.unsplash.com/photo-1621466550398-ac8062907657?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=465&q=80"}
+                image={item.image}
                 price={item.price}
                 url={item.url} />
             )}

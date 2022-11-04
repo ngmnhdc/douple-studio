@@ -96,20 +96,6 @@
     position: relative;
 }
 
-
-/* 
-.color-item::before {
-    position: absolute;
-    left: 0;
-    top: 0;
-    content: '';
-    width: 100%;
-    height: 100%;
-    background: currentColor;
-    opacity: 0.8;
-    box-sizing: border-box;
-} */
-
 .color-item:hover {
     border: 2px solid var(--gray-4);
 }

@@ -4,9 +4,6 @@ import { useRouter } from 'next/router'
 // Import styles
 import styles from './index.module.css'
 
-// Import utils
-import { headerMenuItem } from '../../utils/data'
-
 const Breadcrumb = () => {
   const router = useRouter()
   const parts = router.asPath.split('/')

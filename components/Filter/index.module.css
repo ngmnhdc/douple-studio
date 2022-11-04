@@ -51,7 +51,6 @@
 }
 
 .color-item {
-    /* border: none; */
     background: currentColor;
     position: relative;
 }
@@ -69,7 +68,7 @@
 .slider {
     height: 5px;
     position: relative;
-    background: #ddd;
+    background: var(--gray-8);
     border-radius: 5px;
 }
 
@@ -142,7 +141,7 @@
     margin-left: 12px;
     padding: 4px;
     text-align: center;
-    border: 1px solid #999;
+    border: 1px solid var(--gray-6);
     appearance: textfield;
     -moz-appearance: textfield;
 }

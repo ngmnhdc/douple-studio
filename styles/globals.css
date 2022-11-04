@@ -114,7 +114,6 @@ select::-ms-expand {
     display: flex;
     width: 200px;
     height: 40px;
-    /* line-height: 3; */
     background: var(--white);
     overflow: hidden;
 }
@@ -170,7 +169,6 @@ button:hover {
     width: 100%;
     max-width: 1224px;
     margin: 0 auto;
-    /* margin-top: 60px; */
     display: flex;
     flex-direction: column;
     gap: 24px;
@@ -181,11 +179,3 @@ button:hover {
         padding: 0 20px;
     }
 }
-
-
-/* 
-@media screen and (max-width: 480px) {
-    .main-container {
-        padding: 0 10px;
-    }
-} */

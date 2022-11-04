@@ -1,6 +1,6 @@
 .container {
     width: 100%;
-    background: #f9fafb;
+    background: var(--gray-9);
     margin-top: 40px;
 }
 
@@ -87,20 +87,20 @@
 
 .subcribe-input {
     padding: 8px 16px;
-    border: 1px solid #999;
+    border: 1px solid var(--gray-6);
     outline: none;
     flex: 1;
 }
 
 .subcribe-input:focus {
-    border: 1px solid #666;
+    border: 1px solid var(--gray-4);
 }
 
 .subcribe-button {
     padding: 8px 24px;
     outline: none;
-    background-color: #000;
-    color: #fff;
+    background-color: var(--gray-2);
+    color: var(--white);
     text-transform: uppercase;
     font-weight: 500;
 }
@@ -108,7 +108,7 @@
 .subcribe-text {
     font-size: 12px;
     margin-top: 8px;
-    color: #666;
+    color: var(--gray-4);
     font-weight: 300;
 }
 
@@ -122,10 +122,10 @@
     max-width: 1224px;
     margin: 0 auto;
     padding: 20px 0;
-    border-top: 1px solid #d9d9d9;
+    border-top: 1px solid var(--gray-8);
     text-align: center;
     font-size: 14px;
-    color: #222;
+    color: var(--gray-2);
 }
 
 @media screen and (max-width: 1024px) {

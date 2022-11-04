@@ -5,6 +5,7 @@ import styles from '../../styles/ProductPage.module.css'
 
 // Import components
 import Accordion from '../../components/Accordion'
+import Collection from '../../components/Collection'
 
 // Import icons
 import { HeartIcon } from '../../components/SvgIcon'
@@ -15,8 +16,9 @@ import { IProduct, IProductDetail } from '../../utils/interfaces'
 // Import utils
 import { formatPrice } from '../../utils'
 import { colorArray, compositionAndCare, socialMediaShare } from '../../utils/data'
+
+// Import fake api
 import { getProductDetail, getRandomProductList } from '../api'
-import Collection from '../../components/Collection'
 
 export interface IProductPageProps {
   productDetail: IProductDetail,

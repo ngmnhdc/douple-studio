@@ -27,7 +27,6 @@
 
 .block-menu {
     display: flex;
-    /* justify-content: space-between; */
     align-items: center;
     flex: 1;
     padding-left: 64px;
@@ -106,7 +105,6 @@
 
 .burger-menu-wrapper {
     display: none;
-    /* position: relative; */
 }
 
 .burger-menu-icon {
