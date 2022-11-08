@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'next/link'
 import { useRouter } from 'next/router'
 
 // Import styles
@@ -33,7 +34,7 @@ const Header = () => {
                     key={item.id}
                     className={styles["sidebar-menu-item"]}
                   >
-                    <a href={item.url}>{item.title}</a>
+                    <Link href={item.url}>{item.title}</Link>
                   </li>
                 ))}
               </ul>
@@ -42,9 +43,9 @@ const Header = () => {
           }
         </div>
         <div className={styles["logo"]}>
-          <a href="/">
+          <Link href="/">
             <Logo />
-          </a>
+          </Link>
         </div>
         <ul className={styles["block-menu"]}>
           {headerMenuItem.map(item => (
@@ -56,7 +57,7 @@ const Header = () => {
                   : `${styles["block-menu-item"]}`
               }
             >
-              <a href={item.url}>{item.title}</a>
+              <Link href={item.url}>{item.title}</Link>
             </li>
           ))}
         </ul>
