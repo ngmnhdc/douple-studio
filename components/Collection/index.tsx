@@ -1,4 +1,5 @@
 import React from 'react'
+import { v4 as uuidv4 } from 'uuid';
 
 // Import components
 import ProductCard from '../ProductCard'
@@ -21,8 +22,8 @@ const Collection = ({ heading, productList }: ICollection) => {
       <div className={styles["product-list"]}>
         {productList.map((product) =>
           <ProductCard
+            key={uuidv4()}
             id={product.id}
-            key={product.id}
             name={product.name}
             image={product.image || "https://images.unsplash.com/photo-1621466550398-ac8062907657?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=465&q=80"}
             price={product.price}

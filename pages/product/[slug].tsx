@@ -1,4 +1,5 @@
 import React from 'react'
+import { v4 as uuidv4 } from 'uuid'
 
 // Import styles
 import styles from '../../styles/ProductPage.module.css'
@@ -20,6 +21,9 @@ import { colorArray, compositionAndCare, socialMediaShare } from '../../utils/da
 // Import fake api
 import { getProductDetail, getRandomProductList } from '../api'
 
+// Import context
+import useCartContext, { CartContext } from '../../context/cart'
+
 export interface IProductPageProps {
   productDetail: IProductDetail,
   relatedItems: Array<IProduct>,
@@ -27,6 +31,17 @@ export interface IProductPageProps {
 }
 
 const ProductPage = ({ productDetail, relatedItems, recentlyViewed }: IProductPageProps) => {
+  // const cartContextData = React.useContext(CartContext)
+  // const { total, products, addToCart, removeFromCart } = useCartContext()
+  // console.log(products);
+
+  const handleAddToCart = () => {
+    const currentCart = JSON.parse(localStorage.getItem('douple-studio-cart') || '[]')
+    currentCart.push(productDetail)
+    // console.log(currentCart)
+    localStorage.setItem('douple-studio-cart', JSON.stringify(currentCart))
+  }
+
   return (
     <div className={`main-container`}>
       <div className={styles["container"]}>
@@ -34,7 +49,7 @@ const ProductPage = ({ productDetail, relatedItems, recentlyViewed }: IProductPa
           <div className={styles["image-carousel-wrapper"]}>
             <ul className={styles["image-carousel"]}>
               {productDetail.image_list && productDetail?.image_list.map((item, idx) => (
-                <li key={idx} className={styles["image-carousel-item"]}>
+                <li key={uuidv4()} className={styles["image-carousel-item"]}>
                   <img src={item} />
                 </li>
               ))}
@@ -43,7 +58,7 @@ const ProductPage = ({ productDetail, relatedItems, recentlyViewed }: IProductPa
           <div className={styles["main-image-wrapper"]}>
             <ul className={styles["main-image"]}>
               {productDetail.image_list && productDetail?.image_list.map((item, idx) => (
-                <li key={idx} className={styles["main-image-item"]}>
+                <li key={uuidv4()} className={styles["main-image-item"]}>
                   <img src={item} />
                 </li>
               ))}
@@ -55,7 +70,7 @@ const ProductPage = ({ productDetail, relatedItems, recentlyViewed }: IProductPa
           <span className={styles["product-price"]}>{formatPrice(productDetail?.price)}</span>
           <div className={styles["product-colors"]}>
             {productDetail?.colors.map(({ id, name }) => (
-              <a key={id} className={styles["color-item"]} style={{ color: `${colorArray[id]}` }} title={name}></a>
+              <a key={id} className={styles["color-item"]} style={{ color: `${colorArray[id]}` }} title={name.toLocaleUpperCase()}></a>
             ))}
           </div>
           <select className={`select ${styles["product-size"]}`}>
@@ -68,7 +83,12 @@ const ProductPage = ({ productDetail, relatedItems, recentlyViewed }: IProductPa
           </select>
           <p className={styles["size-measurement"]}>See measurement</p>
           <div className={styles["product-actions"]}>
-            <button className={`btn primary-btn ${styles["add-cart-button"]}`}>Add to cart</button>
+            <button
+              className={`btn primary-btn ${styles["add-cart-button"]}`}
+              onClick={handleAddToCart}
+            >
+              Add to cart
+            </button>
             <button className={`btn ${styles["buy-now-button"]}`}>Buy now</button>
             <button className={`btn ${styles["favorite-button"]}`}>
               <HeartIcon />
