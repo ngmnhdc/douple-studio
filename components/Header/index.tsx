@@ -57,9 +57,9 @@ const Header = () => {
           }
         </div>
         <div className={styles["logo"]}>
-          <a href="/">
-            <Logo />
-          </a>
+          {/* <a href="/"> */}
+          <Logo />
+          {/* </a> */}
         </div>
         <ul className={styles["block-menu"]}>
           {headerMenuItem.map(item => (
@@ -100,10 +100,10 @@ const Header = () => {
             }
           </li>
           <li className={styles["cart-icon"]}>
-            <a href="/cart">
+            <Link href="/cart">
               <CartIcon />
               <span className={styles["cart-quantity"]}>{numberOfCartItem}</span>
-            </a>
+            </Link>
           </li>
           <li className={styles["user-icon"]}>
             <UserIcon />

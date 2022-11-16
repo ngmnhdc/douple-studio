@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'next/link'
 import { v4 as uuidv4 } from 'uuid'
 
 // Import styles
@@ -54,7 +55,7 @@ const Cart = () => {
           <div>{totalPrice}</div>
         </div>
         <div className={styles["actions-container"]}>
-          <a href="/"><button className={`btn ${styles["back-to-shop"]}`}>Continue shopping</button></a>
+          <Link href="/"><button className={`btn ${styles["back-to-shop"]}`}>Continue shopping</button></Link>
           <button className={`btn btn--primary ${styles["check-out"]}`}>Check out</button>
         </div>
       </div>
