@@ -99,12 +99,14 @@ const Header = () => {
               : <SearchIcon />
             }
           </li>
-          <li className={styles["cart-icon"]}>
-            <Link href="/cart">
+          <Link href="/cart">
+            <li className={styles["cart-icon"]}>
               <CartIcon />
-              <span className={styles["cart-quantity"]}>{numberOfCartItem}</span>
-            </Link>
-          </li>
+              <div className={styles["cart-quantity"]}>
+                <span>{numberOfCartItem}</span>
+              </div>
+            </li>
+          </Link>
           <li className={styles["user-icon"]}>
             <UserIcon />
           </li>
