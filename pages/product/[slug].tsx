@@ -22,7 +22,7 @@ import { colorArray, compositionAndCare, socialMediaShare } from '../../utils/da
 import { getProductDetail, getRandomProductList } from '../api'
 
 // Import context
-import useCartContext, { CartContext } from '../../context/cart'
+// import useCartContext, { CartContext } from '../../context/cart'
 
 export interface IProductPageProps {
   productDetail: IProductDetail,
