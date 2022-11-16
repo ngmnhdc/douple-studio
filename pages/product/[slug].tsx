@@ -12,7 +12,7 @@ import Collection from '../../components/Collection'
 import { HeartIcon } from '../../components/SvgIcon'
 
 // Import interfaces
-import { IProduct, IProductDetail } from '../../utils/interfaces'
+import { ICart, IProduct, IProductDetail } from '../../utils/interfaces'
 
 // Import utils
 import { formatPrice } from '../../utils'
@@ -33,13 +33,37 @@ export interface IProductPageProps {
 const ProductPage = ({ productDetail, relatedItems, recentlyViewed }: IProductPageProps) => {
   // const cartContextData = React.useContext(CartContext)
   // const { total, products, addToCart, removeFromCart } = useCartContext()
-  // console.log(products);
+  // console.log(productDetail);
+
+  const [color, setColor] = React.useState(productDetail.colors[0].name)
+  const [size, setSize] = React.useState("")
+  const [quantity, setQuantity] = React.useState(1)
+
+  const handleChangeSize = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    const selectedSize = event.target.value
+    setSize(selectedSize)
+  }
+
+  const handleChangeColor = (event: any) => {
+    const selectedColor = event.target.title
+    setColor(selectedColor)
+  }
 
   const handleAddToCart = () => {
-    const currentCart = JSON.parse(localStorage.getItem('douple-studio-cart') || '[]')
-    currentCart.push(productDetail)
-    // console.log(currentCart)
-    localStorage.setItem('douple-studio-cart', JSON.stringify(currentCart))
+    const { id, name, image, price } = productDetail
+    // Get cart from local storage
+    let cartItems: Array<ICart> = JSON.parse(localStorage.getItem('douple-studio-cart') || '[]')
+    // Check existence of item and add it into cart
+    let existedItem = cartItems.find(item => (
+      item.id === id && item.color === color && item.size === size
+    ));
+    if (existedItem) {
+      existedItem.quantity += quantity;
+    } else {
+      (size && color) ? cartItems.push({ id, name, image, size, color, quantity, price }) : window.alert("Oops! Seems like you forgot to select size or color")
+    }
+    // Save cart to local storage
+    localStorage.setItem('douple-studio-cart', JSON.stringify(cartItems));
   }
 
   return (
@@ -70,11 +94,21 @@ const ProductPage = ({ productDetail, relatedItems, recentlyViewed }: IProductPa
           <span className={styles["product-price"]}>{formatPrice(productDetail?.price)}</span>
           <div className={styles["product-colors"]}>
             {productDetail?.colors.map(({ id, name }) => (
-              <a key={id} className={styles["color-item"]} style={{ color: `${colorArray[id]}` }} title={name.toLocaleUpperCase()}></a>
+              <a
+                key={id}
+                className={color === name ? `${styles["color-item"]} ${styles["color-item--selected"]}` : `${styles["color-item"]}`}
+                style={{ color: `${colorArray[id]}` }}
+                title={name}
+                onClick={handleChangeColor}
+              ></a>
             ))}
           </div>
-          <select className={`select ${styles["product-size"]}`}>
-            <option value="Default" disabled>Choose size</option>
+          <select
+            className={`select ${styles["product-size"]}`}
+            onChange={handleChangeSize}
+            defaultValue="default"
+          >
+            <option value="default" disabled>Choose size</option>
             <option value="XS">XS</option>
             <option value="S">S</option>
             <option value="M">M</option>

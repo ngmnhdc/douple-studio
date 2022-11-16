@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap');
 :root {
+    --red: #dc3535;
     --white: #fff;
     --black: #000;
     --black-10: rgba(0, 0, 0, 0.1);
@@ -40,6 +41,7 @@ body {
     font-family: 'Rubik', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
     line-height: 1.5;
     font-size: 62.5%;
+    color: var(--gray-2);
     -webkit-font-smoothing: antialiased;
 }
 

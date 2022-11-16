@@ -1,3 +1,4 @@
+@import "../../styles/mixin";
 .wrapper {
     width: 100%;
     padding: 0 20px;
@@ -101,6 +102,23 @@
 .search-input input {
     width: calc(100% - 25px);
     padding: 4px 8px;
+}
+
+.cart-icon {
+    position: relative;
+    .cart-quantity {
+        position: absolute;
+        top: -8px;
+        right: -12px;
+        @include size(22px);
+        @include font(1rem);
+        @include flex;
+        line-height: 100%;
+        color: var(--white);
+        background: var(--red);
+        border: 3px solid var(--white);
+        border-radius: 50%;
+    }
 }
 
 .burger-menu-wrapper {

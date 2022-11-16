@@ -3,10 +3,13 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 
 // Import styles
-import styles from './index.module.css'
+import styles from './index.module.scss'
 
 // Import svg icons
 import { BurgerIcon, CartIcon, CloseIcon, Logo, SearchIcon, UserIcon } from '../SvgIcon'
+
+// Import interfaces
+import { ICart } from '../../utils/interfaces'
 
 // Import utils
 import { headerMenuItem } from '../../utils/data'
@@ -18,6 +21,17 @@ const Header = () => {
   const [toggleSidebarMenu, setToggleSidebarMenu] = React.useState<boolean>(false)
   const [toggleSearch, setToggleSearch] = React.useState<boolean>(false)
   const [searchQuery, setSearchQuery] = React.useState<string>("")
+
+  const [cart, setCart] = React.useState<Array<ICart>>([])
+  const [numberOfCartItem, setNumberOfCartItem] = React.useState<number>(cart.length)
+
+  React.useEffect(() => {
+    setCart(JSON.parse(localStorage.getItem('douple-studio-cart') || '[]'))
+  }, [])
+
+  React.useEffect(() => {
+    setNumberOfCartItem(cart.length)
+  }, [cart])
 
   return (
     <div className={styles["wrapper"]}>
@@ -43,9 +57,9 @@ const Header = () => {
           }
         </div>
         <div className={styles["logo"]}>
-          <Link href={"/"}>
+          <a href="/">
             <Logo />
-          </Link>
+          </a>
         </div>
         <ul className={styles["block-menu"]}>
           {headerMenuItem.map(item => (
@@ -86,7 +100,10 @@ const Header = () => {
             }
           </li>
           <li className={styles["cart-icon"]}>
-            <CartIcon />
+            <a href="/cart">
+              <CartIcon />
+              <span className={styles["cart-quantity"]}>{numberOfCartItem}</span>
+            </a>
           </li>
           <li className={styles["user-icon"]}>
             <UserIcon />

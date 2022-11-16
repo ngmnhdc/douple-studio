@@ -17,3 +17,13 @@ export interface IProductDetail {
   description: string,
   url: string
 }
+
+export interface ICart {
+  id: number,
+  name: string,
+  image: string,
+  price: string,
+  size: string,
+  color: string,
+  quantity: number
+}

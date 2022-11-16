@@ -1,24 +1,33 @@
 import React from 'react'
+import { v4 as uuidv4 } from 'uuid'
 
 // Import styles
 import styles from '../../styles/CartPage.module.scss'
 
-// Import icons
-import { MinusIcon, PlusIcon, DeleteIcon } from '../../components/SvgIcon'
+// Import components
+import CartItem from '../../components/CartItem'
+
+// Import interfaces
+import { ICart } from '../../utils/interfaces'
 
 // Import utils
-import { colorArray, productList } from '../../utils/data'
 import { formatPrice } from '../../utils'
 
-// export interface ICollectionProps {
-//   collectionName: string
-//   productList: Array<IProduct>
-// }
-
 const Cart = () => {
-  const product = productList[2]
-  const products = productList.slice(1, 3)
-  // console.log(products)
+  const [cart, setCart] = React.useState<Array<ICart>>([])
+  const [totalPrice, setTotalPrice] = React.useState<string>("")
+
+  React.useEffect(() => {
+    setCart(JSON.parse(localStorage.getItem('douple-studio-cart') || '[]'))
+  }, [])
+
+  React.useEffect(() => {
+    const total = cart.reduce((total, item) => {
+      total += Number(item.price)
+      return total
+    }, 0)
+    setTotalPrice(formatPrice(`${total}`))
+  }, [cart])
 
   return (
     <div className={`main-container`}>
@@ -27,35 +36,22 @@ const Cart = () => {
           <h2 className={styles["heading__text"]}>Shopping cart</h2>
         </div>
         <div className={styles["product-list"]}>
-          {products.map(product => (
-            <div className={styles["product-item"]}>
-              <div className={styles["product-item__image"]}>
-                <img src={product.image} alt={product.name} />
-              </div>
-              <div className={styles["product-item__name"]}>{product.name}</div>
-              <div className={styles["product-item__color"]}>
-                <a
-                  className={styles["color-box"]}
-                  style={{ color: `${colorArray[product.colors[0].id]}` }}
-                  title={product.colors[0].name.toLocaleUpperCase()}>
-                </a>
-              </div>
-              <div className={styles["product-item__size"]}>M</div>
-              <div className={styles["product-item__quantity-control"]}>
-                <button className={`btn btn--default ${styles["quantity__decrease"]}`}><MinusIcon /></button>
-                <span className={styles["quantity__number"]}>1</span>
-                <button className={`btn btn--default ${styles["quantity__increase"]}`}><PlusIcon /></button>
-              </div>
-              <div className={styles["product-item__price"]}>{formatPrice(product.price)}</div>
-              <div className={styles["product-item__action"]}>
-                <button className={`btn btn--default ${styles["remove-item"]}`}><DeleteIcon /></button>
-              </div>
-            </div>
+          {cart.map(({ id, name, image, size, color, quantity, price }: ICart) => (
+            <CartItem
+              key={uuidv4()}
+              id={id}
+              name={name}
+              image={image}
+              size={size}
+              color={color}
+              quantity={quantity}
+              price={price}
+            />
           ))}
         </div>
         <div className={styles["total-price"]}>
           <div>Total:</div>
-          <div>{formatPrice('1098000')}</div>
+          <div>{totalPrice}</div>
         </div>
         <div className={styles["actions-container"]}>
           <a href="/"><button className={`btn ${styles["back-to-shop"]}`}>Continue shopping</button></a>
@@ -65,16 +61,5 @@ const Cart = () => {
     </div >
   )
 }
+
 export default Cart
-
-// export async function getServerSideProps(context: { params: { name: string } }) {
-//   const collectionName = context?.params?.name
-//   const productList = await getCollectionList(context?.params?.name)
-
-//   return {
-//     props: {
-//       collectionName: collectionName,
-//       productList: productList
-//     }
-//   }
-// }

@@ -116,7 +116,7 @@ export const socialMediaShare = `
       </g>
       <defs>
         <clipPath id="clip0_109_276">
-          <rect width="32" height="32" fill="white" />
+          <rect width="32" height="32" fill="WHITE" />
         </clipPath>
       </defs>
     </svg>
@@ -126,7 +126,7 @@ export const socialMediaShare = `
       </g>
       <defs>
         <clipPath id="clip0_109_278">
-          <rect width="32" height="32" fill="white" />
+          <rect width="32" height="32" fill="WHITE" />
         </clipPath>
       </defs>
     </svg>
@@ -136,7 +136,7 @@ export const socialMediaShare = `
       </g>
       <defs>
         <clipPath id="clip0_109_280">
-          <rect width="32" height="32" fill="white" />
+          <rect width="32" height="32" fill="WHITE" />
         </clipPath>
       </defs>
     </svg>
@@ -152,7 +152,7 @@ export const productList = [
     "colors": [
       {
         "id": 0,
-        "name": "white"
+        "name": "WHITE"
       }
     ],
     "image_list": [
@@ -177,19 +177,19 @@ export const productList = [
     "colors": [
       {
         "id": 4,
-        "name": "yellow"
+        "name": "YELLOW"
       },
       {
         "id": 5,
-        "name": "pink"
+        "name": "PINK"
       },
       {
         "id": 6,
-        "name": "blue"
+        "name": "BLUE"
       },
       {
         "id": 8,
-        "name": "green"
+        "name": "GREEN"
       }
     ],
     "image_list": [
@@ -213,7 +213,7 @@ export const productList = [
     "colors": [
       {
         "id": 10,
-        "name": "black"
+        "name": "BLACK"
       }
     ],
     "image_list": [
@@ -236,39 +236,39 @@ export const productList = [
     "colors": [
       {
         "id": 0,
-        "name": "white"
+        "name": "WHITE"
       },
       {
         "id": 1,
-        "name": "beige"
+        "name": "BEIGE"
       },
       {
         "id": 2,
-        "name": "khaki"
+        "name": "KHAKI"
       },
       {
         "id": 4,
-        "name": "yellow"
+        "name": "YELLOW"
       },
       {
         "id": 6,
-        "name": "blue"
+        "name": "BLUE"
       },
       {
         "id": 8,
-        "name": "green"
+        "name": "GREEN"
       },
       {
         "id": 5,
-        "name": "pink"
+        "name": "PINK"
       },
       {
         "id": 9,
-        "name": "gray"
+        "name": "GRAY"
       },
       {
         "id": 10,
-        "name": "black"
+        "name": "BLACK"
       }
     ],
     "image_list": [
@@ -291,27 +291,27 @@ export const productList = [
     "colors": [
       {
         "id": 1,
-        "name": "beige"
+        "name": "BEIGE"
       },
       {
         "id": 4,
-        "name": "yellow"
+        "name": "YELLOW"
       },
       {
         "id": 6,
-        "name": "blue"
+        "name": "BLUE"
       },
       {
         "id": 8,
-        "name": "green"
+        "name": "GREEN"
       },
       {
         "id": 5,
-        "name": "pink"
+        "name": "PINK"
       },
       {
         "id": 9,
-        "name": "gray"
+        "name": "GRAY"
       }
     ],
     "image_list": [
@@ -322,7 +322,7 @@ export const productList = [
       "https://static.pullandbear.net/2/photos//2022/I/0/2/p/8245/507/500/8245507500_2_6_8.jpg?t=1653294526073",
       "https://static.pullandbear.net/2/photos//2022/I/0/2/p/8245/507/500/8245507500_2_8_8.jpg?t=1653294526073",
     ],
-    "description": "White short sleeve cotton T-shirt with contrast graphics and slogan, and a round neck.",
+    "description": "WHITE short sleeve cotton T-shirt with contrast graphics and slogan, and a round neck.",
     "url": "short-sleeve-tshirt-with-tiedye-print-l08245507",
   },
   {
@@ -334,7 +334,7 @@ export const productList = [
     "colors": [
       {
         "id": 0,
-        "name": "white"
+        "name": "WHITE"
       }
     ],
     "image_list": [
@@ -357,35 +357,35 @@ export const productList = [
     "colors": [
       {
         "id": 0,
-        "name": "white"
+        "name": "WHITE"
       },
       {
         "id": 1,
-        "name": "beige"
+        "name": "BEIGE"
       },
       {
         "id": 4,
-        "name": "yellow"
+        "name": "YELLOW"
       },
       {
         "id": 6,
-        "name": "blue"
+        "name": "BLUE"
       },
       {
         "id": 8,
-        "name": "green"
+        "name": "GREEN"
       },
       {
         "id": 5,
-        "name": "pink"
+        "name": "PINK"
       },
       {
         "id": 9,
-        "name": "gray"
+        "name": "GRAY"
       },
       {
         "id": 10,
-        "name": "black"
+        "name": "BLACK"
       }
     ],
     "image_list": [
@@ -408,27 +408,27 @@ export const productList = [
     "colors": [
       {
         "id": 0,
-        "name": "white"
+        "name": "WHITE"
       },
       {
         "id": 1,
-        "name": "beige"
+        "name": "BEIGE"
       },
       {
         "id": 5,
-        "name": "pink"
+        "name": "PINK"
       },
       {
         "id": 9,
-        "name": "gray"
+        "name": "GRAY"
       },
       {
         "id": 3,
-        "name": "brown"
+        "name": "BROWN"
       },
       {
         "id": 10,
-        "name": "black"
+        "name": "BLACK"
       }
     ],
     "image_list": [
@@ -451,7 +451,7 @@ export const productList = [
     "colors": [
       {
         "id": 0,
-        "name": "white"
+        "name": "WHITE"
       }
     ],
     "image_list": [
@@ -462,7 +462,7 @@ export const productList = [
       "https://static.pullandbear.net/2/photos//2022/I/0/2/p/8246/512/250/8246512250_2_6_8.jpg?t=1659365691187",
       "https://static.pullandbear.net/2/photos//2022/I/0/2/p/8246/512/250/8246512250_2_8_8.jpg?t=1659365691187",
     ],
-    "description": "Short sleeve T-shirt with a round neckline, a print of a tree with a blue sky and a label detail at the hem. Made of 100% cotton.",
+    "description": "Short sleeve T-shirt with a round neckline, a print of a tree with a BLUE sky and a label detail at the hem. Made of 100% cotton.",
     "url": "short-sleeve-tshirt-with-tree-photo-l08246512",
   },
   {
@@ -474,19 +474,19 @@ export const productList = [
     "colors": [
       {
         "id": 0,
-        "name": "white"
+        "name": "WHITE"
       },
       {
         "id": 10,
-        "name": "black"
+        "name": "BLACK"
       },
       {
         "id": 9,
-        "name": "gray"
+        "name": "GRAY"
       },
       {
         "id": 7,
-        "name": "navy"
+        "name": "NAVY"
       }
     ],
     "image_list": [
@@ -509,7 +509,7 @@ export const productList = [
     "colors": [
       {
         "id": 9,
-        "name": "gray"
+        "name": "GRAY"
       },
     ],
     "image_list": [
@@ -532,7 +532,7 @@ export const productList = [
     "colors": [
       {
         "id": 0,
-        "name": "white"
+        "name": "WHITE"
       }
     ],
     "image_list": [
@@ -563,15 +563,15 @@ export const colorArray = [
 ]
 
 export const colorNames = [
-  "white",
-  "beige",
-  "khaki",
-  "brown",
-  "yellow",
-  "pink",
-  "blue",
-  "navy",
-  "green",
-  "gray",
-  "black"
+  "WHITE",
+  "BEIGE",
+  "KHAKI",
+  "BROWN",
+  "YELLOW",
+  "PINK",
+  "BLUE",
+  "NAVY",
+  "GREEN",
+  "GRAY",
+  "BLACK"
 ]

@@ -94,10 +94,13 @@
     align-items: center;
     cursor: pointer;
     position: relative;
+    opacity: 0.8;
 }
 
+.color-item--selected,
 .color-item:hover {
     border: 2px solid var(--gray-4);
+    opacity: 1;
 }
 
 .size-measurement {

@@ -45,6 +45,9 @@
                     cursor: pointer;
                 }
             }
+            &__size {
+                min-width: 50px;
+            }
             &__quantity-control {
                 @include flex($gap: 8px);
                 .quantity__decrease,
