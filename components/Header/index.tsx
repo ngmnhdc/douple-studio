@@ -8,8 +8,8 @@ import styles from './index.module.scss'
 // Import svg icons
 import { BurgerIcon, CartIcon, CloseIcon, Logo, SearchIcon, UserIcon } from '../SvgIcon'
 
-// Import interfaces
-import { ICart } from '../../utils/interfaces'
+// Import contexts
+import { CartContext } from '../../contexts/cart'
 
 // Import utils
 import { headerMenuItem } from '../../utils/data'
@@ -18,20 +18,11 @@ const Header = () => {
   const router = useRouter()
   const currentUrl = router.asPath
 
+  const cartContextData = React.useContext(CartContext)
+
   const [toggleSidebarMenu, setToggleSidebarMenu] = React.useState<boolean>(false)
   const [toggleSearch, setToggleSearch] = React.useState<boolean>(false)
   const [searchQuery, setSearchQuery] = React.useState<string>("")
-
-  const [cart, setCart] = React.useState<Array<ICart>>([])
-  const [numberOfCartItem, setNumberOfCartItem] = React.useState<number>(cart.length)
-
-  React.useEffect(() => {
-    setCart(JSON.parse(localStorage.getItem('douple-studio-cart') || '[]'))
-  }, [])
-
-  React.useEffect(() => {
-    setNumberOfCartItem(cart.length)
-  }, [cart])
 
   return (
     <div className={styles["wrapper"]}>
@@ -103,7 +94,7 @@ const Header = () => {
             <li className={styles["cart-icon"]}>
               <CartIcon />
               <div className={styles["cart-quantity"]}>
-                <span>{numberOfCartItem}</span>
+                <span>{cartContextData?.numberOfCartItem}</span>
               </div>
             </li>
           </Link>

@@ -18,7 +18,7 @@ export interface IProductDetail {
   url: string
 }
 
-export interface ICart {
+export interface ICartItem {
   id: number,
   name: string,
   image: string,

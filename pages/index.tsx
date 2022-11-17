@@ -10,6 +10,7 @@ import styles from '../styles/HomePage.module.css'
 
 // Import utils
 import { IProduct } from '../utils/interfaces'
+import { CartContext } from '../contexts/cart'
 import { getRandomProductList } from './api'
 
 export interface IHomePageProps {
@@ -18,6 +19,8 @@ export interface IHomePageProps {
 }
 
 const HomePage = ({ newArrivals, bestSeller }: IHomePageProps) => {
+  const cartContextData = React.useContext(CartContext)
+
   return (
     <div className={styles["container"]}>
       <PromotionBanner />

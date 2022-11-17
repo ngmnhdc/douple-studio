@@ -11,8 +11,11 @@ import Collection from '../../components/Collection'
 // Import icons
 import { HeartIcon } from '../../components/SvgIcon'
 
+// Import contexts
+import { CartContext } from '../../contexts/cart'
+
 // Import interfaces
-import { ICart, IProduct, IProductDetail } from '../../utils/interfaces'
+import { ICartItem, IProduct, IProductDetail } from '../../utils/interfaces'
 
 // Import utils
 import { formatPrice } from '../../utils'
@@ -21,9 +24,6 @@ import { colorArray, compositionAndCare, socialMediaShare } from '../../utils/da
 // Import fake api
 import { getProductDetail, getRandomProductList } from '../api'
 
-// Import context
-// import useCartContext, { CartContext } from '../../context/cart'
-
 export interface IProductPageProps {
   productDetail: IProductDetail,
   relatedItems: Array<IProduct>,
@@ -31,9 +31,7 @@ export interface IProductPageProps {
 }
 
 const ProductPage = ({ productDetail, relatedItems, recentlyViewed }: IProductPageProps) => {
-  // const cartContextData = React.useContext(CartContext)
-  // const { total, products, addToCart, removeFromCart } = useCartContext()
-  // console.log(productDetail);
+  const cartContextData = React.useContext(CartContext)
 
   const [color, setColor] = React.useState(productDetail.colors[0].name)
   const [size, setSize] = React.useState("")
@@ -51,19 +49,27 @@ const ProductPage = ({ productDetail, relatedItems, recentlyViewed }: IProductPa
 
   const handleAddToCart = () => {
     const { id, name, image, price } = productDetail
-    // Get cart from local storage
-    let cartItems: Array<ICart> = JSON.parse(localStorage.getItem('douple-studio-cart') || '[]')
+    let cart: Array<ICartItem> = cartContextData?.cartItems || []
+
     // Check existence of item and add it into cart
-    let existedItem = cartItems.find(item => (
+    let existedItem = cart.find(item => (
       item.id === id && item.color === color && item.size === size
     ));
     if (existedItem) {
       existedItem.quantity += quantity;
     } else {
-      (size && color) ? cartItems.push({ id, name, image, size, color, quantity, price }) : window.alert("Oops! Seems like you forgot to select size or color")
+      (size && color)
+        ? cart.push({ id, name, image, size, color, quantity, price })
+        : window.alert("Oops! Seems like you forgot to select size or color")
     }
-    // Save cart to local storage
-    localStorage.setItem('douple-studio-cart', JSON.stringify(cartItems));
+
+    // Update states
+    cartContextData?.setCartItems(cart)
+    cartContextData?.setNumberOfCartItem(cart.reduce((prev, item) => (prev + item.quantity), 0))
+    cartContextData?.setTotalPrice(cart.reduce((prev, item) => (prev + Number(item.price) * item.quantity), 0))
+
+    // Update local storage
+    localStorage.setItem('douple-studio-cart', JSON.stringify(cart))
   }
 
   return (
@@ -123,7 +129,12 @@ const ProductPage = ({ productDetail, relatedItems, recentlyViewed }: IProductPa
             >
               Add to cart
             </button>
-            <button className={`btn ${styles["buy-now-button"]}`}>Buy now</button>
+            <button
+              className={`btn ${styles["buy-now-button"]}`}
+              onClick={handleAddToCart}
+            >
+              Buy now
+            </button>
             <button className={`btn ${styles["favorite-button"]}`}>
               <HeartIcon />
             </button>
