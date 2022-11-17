@@ -7,7 +7,7 @@ import styles from '../../styles/CartPage.module.scss'
 import { MinusIcon, PlusIcon, DeleteIcon } from '../../components/SvgIcon'
 
 // Import interfaces
-import { ICart } from '../../utils/interfaces'
+import { ICartItem } from '../../utils/interfaces'
 
 // Import utils
 import { colorArray, colorNames } from '../../utils/data'
@@ -18,7 +18,7 @@ import { formatPrice } from '../../utils'
 //   productList: Array<IProduct>
 // }
 
-const CartItem = ({ id, name, image, size, color, quantity, price }: ICart) => {
+const CartItem = ({ id, name, image, size, color, quantity, price }: ICartItem) => {
   return (
     <div className={styles["product-item"]}>
       <div className={styles["product-item__image"]}>
