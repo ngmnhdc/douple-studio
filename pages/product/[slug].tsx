@@ -48,6 +48,7 @@ const ProductPage = ({ productDetail, relatedItems, recentlyViewed }: IProductPa
   }
 
   const handleAddToCart = () => {
+    const uid = uuidv4()
     const { id, name, image, price } = productDetail
     let cart: Array<ICartItem> = cartContextData?.cartItems || []
 
@@ -59,7 +60,7 @@ const ProductPage = ({ productDetail, relatedItems, recentlyViewed }: IProductPa
       existedItem.quantity += quantity;
     } else {
       (size && color)
-        ? cart.push({ id, name, image, size, color, quantity, price })
+        ? cart.push({ uid, id, name, image, size, color, quantity, price })
         : window.alert("Oops! Seems like you forgot to select size or color")
     }
 

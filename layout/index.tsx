@@ -29,9 +29,12 @@ export default function Layout({ children }: any) {
   React.useEffect(() => {
     let cart: Array<ICartItem> = JSON.parse(localStorage.getItem('douple-studio-cart') || '[]')
     setCartItems(cart)
-    setNumberOfCartItem(cart.reduce((prev, item) => (prev + item.quantity), 0))
-    setTotalPrice(cart.reduce((prev, item) => (prev + Number(item.price) * item.quantity), 0))
   }, [])
+
+  React.useEffect(() => {
+    setNumberOfCartItem(cartItems.reduce((prev, item) => (prev + item.quantity), 0))
+    setTotalPrice(cartItems.reduce((prev, item) => (prev + Number(item.price) * item.quantity), 0))
+  }, [cartItems])
 
   return (
     <>

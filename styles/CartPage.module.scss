@@ -47,6 +47,7 @@
             }
             &__size {
                 min-width: 50px;
+                text-align: center;
             }
             &__quantity-control {
                 @include flex($gap: 8px);

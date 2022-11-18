@@ -19,6 +19,7 @@ export interface IProductDetail {
 }
 
 export interface ICartItem {
+  uid: string,
   id: number,
   name: string,
   image: string,
