@@ -16,7 +16,7 @@ import { ICartItem } from '../../utils/interfaces'
 import { colorArray, colorNames } from '../../utils/data'
 import { formatPrice } from '../../utils'
 
-const CartItem = ({ uid, id, name, image, size, color, quantity, price }: ICartItem) => {
+const CartItem = ({ uid, id, name, image, size, color, quantity, price, total_price }: ICartItem) => {
   const cartContextData = React.useContext(CartContext)
   const [currentQuantity, setCurrentQuantity] = React.useState(quantity)
 
@@ -29,14 +29,17 @@ const CartItem = ({ uid, id, name, image, size, color, quantity, price }: ICartI
 
     let newCartItems = cartContextData?.cartItems.reduce((prev: Array<ICartItem>, curr) => {
       if (curr.uid === selectedItemId) {
-        (curr.quantity > 1) &&
-          (curr.quantity = curr.quantity - 1)
+        if (curr.quantity > 1) {
+          curr.quantity = curr.quantity - 1
+          curr.total_price -= Number(curr.price)
+        }
       }
       return [...prev, curr]
     }, [])
 
     // Update cart in local storage
     newCartItems && cartContextData?.setCartItems(newCartItems)
+    newCartItems && cartContextData?.setTotalPrice(newCartItems.reduce((prev, item) => (prev + item.total_price), 0))
     localStorage.setItem('douple-studio-cart', JSON.stringify(newCartItems))
   }
 
@@ -48,12 +51,16 @@ const CartItem = ({ uid, id, name, image, size, color, quantity, price }: ICartI
     setCurrentQuantity(currentQuantity => currentQuantity + 1)
 
     let newCartItems = cartContextData?.cartItems.reduce((prev: Array<ICartItem>, curr) => {
-      if (curr.uid === selectedItemId) { curr.quantity = curr.quantity + 1 }
+      if (curr.uid === selectedItemId) {
+        curr.quantity = curr.quantity + 1
+        curr.total_price += Number(curr.price)
+      }
       return [...prev, curr]
     }, [])
 
     // Update cart in local storage
     newCartItems && cartContextData?.setCartItems(newCartItems)
+    newCartItems && cartContextData?.setTotalPrice(newCartItems.reduce((prev, item) => (prev + item.total_price), 0))
     localStorage.setItem('douple-studio-cart', JSON.stringify(newCartItems))
   }
 
@@ -100,7 +107,7 @@ const CartItem = ({ uid, id, name, image, size, color, quantity, price }: ICartI
           <PlusIcon />
         </button>
       </div>
-      <div className={styles["product-item__price"]}>{formatPrice(price)}</div>
+      <div className={styles["product-item__price"]}>{formatPrice(total_price)}</div>
       <div className={styles["product-item__action"]}>
         <button
           className={`btn btn--default ${styles["remove-item"]}`}

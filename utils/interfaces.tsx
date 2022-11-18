@@ -26,5 +26,6 @@ export interface ICartItem {
   price: string,
   size: string,
   color: string,
-  quantity: number
+  quantity: number,
+  total_price: number
 }

@@ -27,7 +27,7 @@ const Cart = () => {
           <h2 className={styles["heading__text"]}>Shopping cart</h2>
         </div>
         <div className={styles["product-list"]}>
-          {cartContextData?.cartItems.map(({ uid, id, name, image, size, color, quantity, price }: ICartItem) => (
+          {cartContextData?.cartItems.map(({ uid, id, name, image, size, color, quantity, price, total_price }: ICartItem) => (
             <CartItem
               key={uid}
               uid={uid}
@@ -38,6 +38,7 @@ const Cart = () => {
               color={color}
               quantity={quantity}
               price={price}
+              total_price={total_price}
             />
           ))}
         </div>

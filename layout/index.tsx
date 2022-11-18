@@ -33,7 +33,7 @@ export default function Layout({ children }: any) {
 
   React.useEffect(() => {
     setNumberOfCartItem(cartItems.reduce((prev, item) => (prev + item.quantity), 0))
-    setTotalPrice(cartItems.reduce((prev, item) => (prev + Number(item.price) * item.quantity), 0))
+    setTotalPrice(cartItems.reduce((prev, item) => (prev + item.total_price), 0))
   }, [cartItems])
 
   return (

@@ -58,16 +58,17 @@ const ProductPage = ({ productDetail, relatedItems, recentlyViewed }: IProductPa
     ));
     if (existedItem) {
       existedItem.quantity += quantity;
+      existedItem.total_price += Number(existedItem.price) * quantity;
     } else {
       (size && color)
-        ? cart.push({ uid, id, name, image, size, color, quantity, price })
+        ? cart.push({ uid, id, name, image, size, color, quantity, price, total_price: Number(price) })
         : window.alert("Oops! Seems like you forgot to select size or color")
     }
 
     // Update states
     cartContextData?.setCartItems(cart)
     cartContextData?.setNumberOfCartItem(cart.reduce((prev, item) => (prev + item.quantity), 0))
-    cartContextData?.setTotalPrice(cart.reduce((prev, item) => (prev + Number(item.price) * item.quantity), 0))
+    cartContextData?.setTotalPrice(cart.reduce((prev, item) => (prev + item.total_price), 0))
 
     // Update local storage
     localStorage.setItem('douple-studio-cart', JSON.stringify(cart))
