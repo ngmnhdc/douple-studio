@@ -1,0 +1,30 @@
+@import '../../styles/mixin';
+.cart-item {
+    @include flex($gap: 8px);
+    @include size(100%);
+    &+.cart-item {
+        margin-top: 8px;
+    }
+    &__image {
+        width: 60px;
+        img {
+            @include size(100%);
+        }
+    }
+    &__details {
+        @include flex($direction: column, $align: flex-start, $gap: 4px);
+        @include font(1.2rem);
+        flex: 1;
+        color: var(--gray-4);
+        &>div {
+            @include size(100%);
+        }
+    }
+    &__name {
+        @include font(1.4rem);
+    }
+    &__price {
+        @include font(1.4rem);
+        text-align: right;
+    }
+}

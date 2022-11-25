@@ -1,0 +1,10 @@
+@import '../../styles/mixin';
+.container {
+    @include flex($direction: column, $gap: 16px);
+    @include font(1.6rem);
+    .back-to-shop {
+        @include flex($gap: 4px);
+        padding: 4px;
+        background: none;
+    }
+}

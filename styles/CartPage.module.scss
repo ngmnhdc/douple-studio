@@ -1,117 +1,117 @@
-    @import "mixin";
-    .container {
+@import "mixin";
+.container {
+    @include size(100%);
+    @include font();
+    min-height: calc(100vh - 60px - 48px - 300px);
+    max-width: 100rem;
+    margin: 0 auto;
+    .heading {
         @include size(100%);
-        @include font();
-        min-height: calc(100vh - 60px - 48px - 300px);
-        max-width: 100rem;
-        margin: 0 auto;
-        .heading {
+        @include flex();
+        margin: 24px 0 20px;
+        &__text {
+            @include font(2.8rem);
+            text-transform: uppercase;
+        }
+    }
+    .product-list {
+        @include size(100%);
+        @include flex($direction: column);
+        .product-item {
+            @include flex($gap: 16px);
             @include size(100%);
-            @include flex();
-            margin: 24px 0 20px;
-            &__text {
-                @include font(2.8rem);
-                text-transform: uppercase;
+            &+.product-item {
+                border-top: 1px solid var(--gray-8);
+            }
+            &>div {
+                padding: 8px 16px;
+            }
+            &__image {
+                width: 100px;
+                img {
+                    @include size(100%);
+                }
+            }
+            &__name {
+                flex: 1;
+            }
+            &__color {
+                .color-box {
+                    @include size(24px);
+                    @include flex();
+                    border: 1px solid var(--gray-6);
+                    background: currentColor;
+                    position: relative;
+                    cursor: pointer;
+                }
+            }
+            &__size {
+                min-width: 50px;
+                text-align: center;
+            }
+            &__quantity-control {
+                @include flex($gap: 8px);
+                .quantity__decrease,
+                .quantity__increase {
+                    @include size(32px, 24px);
+                    @include flex();
+                    padding: 0;
+                }
+            }
+            &__action {
+                .remove-item {
+                    @include size(32px);
+                    @include flex();
+                    padding: 0;
+                }
             }
         }
-        .product-list {
-            @include size(100%);
-            @include flex($direction: column);
-            .product-item {
-                @include flex($gap: 16px);
-                @include size(100%);
-                &+.product-item {
-                    border-top: 1px solid var(--gray-8);
-                }
-                &>div {
-                    padding: 8px 16px;
-                }
-                &__image {
-                    width: 100px;
-                    img {
-                        @include size(100%);
-                    }
-                }
-                &__name {
-                    flex: 1;
-                }
-                &__color {
-                    .color-box {
-                        @include size(24px);
-                        @include flex();
-                        border: 1px solid var(--gray-6);
-                        background: currentColor;
-                        position: relative;
-                        cursor: pointer;
-                    }
-                }
-                &__size {
-                    min-width: 50px;
-                    text-align: center;
-                }
-                &__quantity-control {
-                    @include flex($gap: 8px);
-                    .quantity__decrease,
-                    .quantity__increase {
-                        @include size(32px, 24px);
-                        @include flex();
-                        padding: 0;
-                    }
-                }
-                &__action {
-                    .remove-item {
-                        @include size(32px);
-                        @include flex();
-                        padding: 0;
-                    }
-                }
+    }
+    .total-price {
+        @include font(2rem, 500);
+        @include size(100%);
+        @include flex($justify: flex-end, $gap: 8px);
+        margin-top: 8px;
+        padding: 24px;
+        border-top: 2px solid var(--gray-7);
+    }
+    .actions-container {
+        @include flex($justify: flex-end, $gap: 16px);
+        .back-to-shop,
+        .check-out {
+            min-width: 140px;
+            text-transform: uppercase;
+            padding: 8px 10px;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .container .product-list .product-item {
+        gap: 4px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .container {
+        .product-list .product-item {
+            &>div {
+                padding: 8px 0;
+                @include font(1.2rem);
+            }
+            &__image {
+                max-width: 60px;
+            }
+            &__size {
+                min-width: 20px;
+                text-align: right;
+            }
+            &__quantity-control {
+                gap: 0;
             }
         }
         .total-price {
-            @include font(2rem, 500);
-            @include size(100%);
-            @include flex($justify: flex-end, $gap: 8px);
-            margin-top: 8px;
-            padding: 24px;
-            border-top: 2px solid var(--gray-7);
-        }
-        .actions-container {
-            @include flex($justify: flex-end, $gap: 16px);
-            .back-to-shop,
-            .check-out {
-                min-width: 140px;
-                text-transform: uppercase;
-                padding: 8px 10px;
-            }
+            @include font(1.8rem);
         }
     }
-    
-    @media screen and (max-width: 768px) {
-        .container .product-list .product-item {
-            gap: 4px;
-        }
-    }
-    
-    @media screen and (max-width: 480px) {
-        .container {
-            .product-list .product-item {
-                &>div {
-                    padding: 8px 0;
-                    @include font(1.2rem);
-                }
-                &__image {
-                    max-width: 60px;
-                }
-                &__size {
-                    min-width: 20px;
-                    text-align: right;
-                }
-                &__quantity-control {
-                    gap: 0;
-                }
-            }
-            .total-price {
-                @include font(1.8rem);
-            }
-        }
-    }
+}

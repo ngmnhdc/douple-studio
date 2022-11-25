@@ -1,0 +1,131 @@
+@import "mixin";
+.container {
+    @include size(100%);
+    @include font();
+    min-height: calc(100vh - 60px - 48px - 300px);
+    margin: 0 auto;
+    .heading {
+        @include size(100%);
+        @include flex();
+        margin: 24px 0 20px;
+        &__text {
+            @include font(2.8rem);
+            text-transform: uppercase;
+        }
+    }
+    &-inner {
+        @include flex($justify: flex-start, $align: flex-start, $gap: 24px);
+        @media screen and (max-width: 480px) {
+            @include flex($direction: column);
+        }
+        .checkout-summary {
+            @include flex($justify: flex-start, $align: flex-start, $gap: 24px);
+            flex: 1;
+            @media screen and (max-width: 1024px) {
+                @include flex($direction: column, $gap: 24px);
+            }
+            @media screen and (max-width: 480px) {
+                width: 100%;
+            }
+            .shipping-information {
+                @include flex($direction: column, $align: flex-start);
+                @include size(100%);
+                gap: 8px;
+                flex: 1;
+            }
+            .payment-method {
+                @include size(100%);
+                flex: 1;
+                &__list {
+                    @include flex($justify: flex-start, $align: flex-start, $direction: column, $gap: 8px);
+                    padding-right: 30px;
+                    @media screen and (max-width: 480px) {
+                        padding: 0;
+                    }
+                }
+                &__item {
+                    @include size(100%);
+                    border: 1px solid var(--gray-8);
+                    padding: 8px 16px;
+                    @media screen and (max-width: 480px) {
+                        padding: 8px;
+                    }
+                }
+                &__label {
+                    @include size(100%);
+                    @include flex($justify: flex-start, $gap: 4px);
+                }
+                &__content {
+                    @include flex($direction: column, $gap: 8px);
+                    text-align: justify;
+                    margin-top: 8px;
+                    color: var(--gray-4);
+                }
+            }
+        }
+        .shopping-cart {
+            @include size(100%);
+            @include flex($direction: column, $align: flex-start);
+            flex: 1;
+            max-width: 400px;
+            padding: 0 24px 16px;
+            background: var(--gray-9);
+            @media screen and (max-width: 480px) {
+                padding: 0;
+                margin-top: 24px;
+                background: none;
+            }
+            .cart-item-list {
+                @include size(100%);
+                @include flex($direction: column, $align: flex-start);
+            }
+            .total-price-container {
+                @include size(100%);
+                @include flex($direction: column, $gap: 4px);
+                margin-top: 16px;
+                border-top: 1px solid var(--gray-8);
+                padding: 8px 0;
+                &>div {
+                    @include size(100%);
+                    @include flex($justify: space-between);
+                }
+                .total {
+                    @include font(1.8rem, 500);
+                    margin-top: 8px;
+                    border-top: 1px solid var(--gray-8);
+                    padding: 16px 0 0;
+                }
+            }
+        }
+    }
+    .actions {
+        @include flex($justify: flex-end, $gap: 8px);
+        margin-top: 16px;
+        &>button {
+            min-width: 140px;
+            text-transform: uppercase;
+        }
+    }
+}
+
+.sub-heading {
+    @include font(1.8rem, 500);
+    text-align: left;
+    margin: 16px 0 8px;
+}
+
+.input-item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    .label {
+        @include font(1.4rem);
+    }
+    .input,
+    .text-area {
+        padding: 4px 8px;
+        border: 1px solid var(--gray-8);
+        line-height: 28px;
+        min-width: 300px;
+    }
+}

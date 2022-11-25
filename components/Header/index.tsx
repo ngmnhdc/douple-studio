@@ -48,9 +48,11 @@ const Header = () => {
           }
         </div>
         <div className={styles["logo"]}>
-          {/* <a href="/"> */}
-          <Logo />
-          {/* </a> */}
+          <Link href="/">
+            <div>
+              <Logo />
+            </div>
+          </Link>
         </div>
         <ul className={styles["block-menu"]}>
           {headerMenuItem.map(item => (
