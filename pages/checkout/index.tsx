@@ -1,5 +1,8 @@
+// Import libraries
 import React from 'react'
 import Link from 'next/link'
+import { message, Popover } from 'antd'
+import { QuestionCircleOutlined } from '@ant-design/icons';
 
 // Import styles
 import styles from '../../styles/CheckoutPage.module.scss'
@@ -15,11 +18,40 @@ import { formatPrice } from '../../utils'
 
 const Checkout = () => {
   const cartContextData = React.useContext(CartContext)
-  const [paymentMethod, setPaymentMethod] = React.useState("")
+  const [paymentMethod, setPaymentMethod] = React.useState("cod")
+  const [promotionCode, setPromotionCode] = React.useState("")
+
+  const subTotal = cartContextData?.totalPrice
+  const [shippingFee, setShippingFee] = React.useState(0)
+  const [discount, setDiscount] = React.useState(0)
+  const [totalAmount, setTotalAmount] = React.useState(subTotal)
+
+  React.useEffect(() => {
+    if (subTotal) {
+      if (subTotal < 1000000) {
+        setShippingFee(30000)
+      }
+    }
+  }, [])
+
+  React.useEffect(() => {
+    if (subTotal) {
+      setTotalAmount(() => subTotal + shippingFee - discount)
+    }
+  }, [subTotal, shippingFee, discount])
 
   const handleSelectPaymentMethod = (event: React.ChangeEvent<HTMLInputElement>) => {
     const payment_method = event.target.value
     setPaymentMethod(payment_method)
+  }
+
+  const handleSubmitPromotion = () => {
+    if (promotionCode === 'HELLODOUPLE' || promotionCode === 'hellodouple') {
+      if (cartContextData?.totalPrice) {
+        let discountAmount = cartContextData?.totalPrice * 0.1
+        setDiscount(discountAmount)
+      }
+    }
   }
 
   const handleOrderComplete = () => {
@@ -27,7 +59,7 @@ const Checkout = () => {
     cartContextData?.setNumberOfCartItem(0)
     // Update local storage
     localStorage.setItem('douple-studio-cart', JSON.stringify([]))
-    window.alert("Order complete!")
+    message.success("Place an order successfully!")
   }
 
   return (
@@ -121,34 +153,56 @@ const Checkout = () => {
                   total_price={total_price} />
               ))}
             </div>
+            <div className={styles["promotion"]}>
+              <input
+                type="text"
+                className={styles["promotion__input"]}
+                placeholder="Promotion code"
+                onChange={(event: React.ChangeEvent<HTMLInputElement>) => setPromotionCode(event.target.value)}
+              />
+              <button
+                className={styles["promotion__button"]}
+                onClick={handleSubmitPromotion}
+              >
+                Apply
+              </button>
+            </div>
+            <p className={styles["promotion__guide"]}>Apply "HELLODOUPLE" code for 10% discount.</p>
             <div className={styles["total-price-container"]}>
               <div className={styles["sub-total"]}>
                 <p>Sub Total</p>
                 <p>{cartContextData?.totalPrice && formatPrice(cartContextData?.totalPrice)}</p>
               </div>
               <div className={styles["shipping"]}>
-                <p>Shipping</p>
-                <p>{0}</p>
+                <p className={styles["shipping__content"]}>
+                  Shipping
+                  <Popover content="Free shipping for order over 1,000,000 VND">
+                    <QuestionCircleOutlined />
+                  </Popover>
+                </p>
+                <p>{shippingFee ? formatPrice(shippingFee) : 0}</p>
               </div>
               <div className={styles["discount"]}>
                 <p>Discount</p>
-                <p>- 0</p>
+                <p>{discount ? `- ${formatPrice(discount)}` : "- 0"}</p>
               </div>
               <div className={styles["total"]}>
                 <p>Total</p>
-                <p>{cartContextData?.totalPrice && formatPrice(cartContextData?.totalPrice)}</p>
+                <p>{formatPrice(totalAmount + '')}</p>
               </div>
             </div>
           </div>
         </div>
         <div className={styles["actions"]}>
           <Link href="/cart"><button className={`btn ${styles["back-to-cart"]}`}>Back to cart</button></Link>
-          <button
-            className={`btn btn--primary ${styles["order-complete"]}`}
-            onClick={handleOrderComplete}
-          >
-            Order Complete
-          </button>
+          <Link href="/cart">
+            <button
+              className={`btn btn--primary ${styles["order-complete"]}`}
+              onClick={handleOrderComplete}
+            >
+              Order Complete
+            </button>
+          </Link>
         </div>
       </div>
     </div >

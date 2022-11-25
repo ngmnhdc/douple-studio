@@ -79,6 +79,29 @@
                 @include size(100%);
                 @include flex($direction: column, $align: flex-start);
             }
+            .promotion {
+                @include flex($gap: 4px);
+                @include size(100%);
+                margin-top: 16px;
+                padding-top: 16px;
+                border-top: 1px solid var(--gray-8);
+                &__input {
+                    flex: 1;
+                    padding: 8px 16px;
+                    line-height: 17px;
+                    border: 1px solid var(--gray-8);
+                }
+                &__button {
+                    padding: 8px 16px;
+                    min-height: 32px;
+                    min-width: 80px;
+                    background-color: var(--gray-8);
+                }
+                &__guide {
+                    @include font(1.2rem, 300);
+                    padding: 4px 0 0 4px;
+                }
+            }
             .total-price-container {
                 @include size(100%);
                 @include flex($direction: column, $gap: 4px);
@@ -88,6 +111,11 @@
                 &>div {
                     @include size(100%);
                     @include flex($justify: space-between);
+                    .shipping {
+                        &__content {
+                            @include flex($gap: 4px);
+                        }
+                    }
                 }
                 .total {
                     @include font(1.8rem, 500);

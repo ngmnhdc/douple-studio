@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'next/link'
 import { v4 as uuidv4 } from 'uuid'
 
 // Import styles
@@ -131,12 +132,14 @@ const ProductPage = ({ productDetail, relatedItems, recentlyViewed }: IProductPa
             >
               Add to cart
             </button>
-            <button
-              className={`btn ${styles["buy-now-button"]}`}
-              onClick={handleAddToCart}
-            >
-              Buy now
-            </button>
+            <Link href="/cart">
+              <button
+                className={`btn ${styles["buy-now-button"]}`}
+                onClick={handleAddToCart}
+              >
+                Buy now
+              </button>
+            </Link>
             <button className={`btn ${styles["favorite-button"]}`}>
               <HeartIcon />
             </button>

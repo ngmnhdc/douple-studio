@@ -10,7 +10,7 @@ const Filter = () => {
   return (
     <>
       <h2 className={styles["filter-heading"]}>Filters</h2>
-      <div className={styles["filter-group"]}>
+      {/* <div className={styles["filter-group"]}>
         <div className={styles["group-heading"]}>
           <h3 className={styles["group-title"]}>Price</h3>
           <span className={styles["group-clear"]}>x</span>
@@ -35,7 +35,7 @@ const Filter = () => {
             <input type="number" className={styles["input-max"]} value="7500" />
           </div>
         </div>
-      </div>
+      </div> */}
       <div className={styles["filter-group"]}>
         <div className={styles["group-heading"]}>
           <h3 className={styles["group-title"]}>Size</h3>
