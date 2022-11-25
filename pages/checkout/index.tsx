@@ -167,7 +167,7 @@ const Checkout = () => {
                 Apply
               </button>
             </div>
-            <p className={styles["promotion__guide"]}>Apply "HELLODOUPLE" code for 10% discount.</p>
+            <p className={styles["promotion__guide"]}>{`Apply "HELLODOUPLE" code for 10% discount.`}</p>
             <div className={styles["total-price-container"]}>
               <div className={styles["sub-total"]}>
                 <p>Sub Total</p>
