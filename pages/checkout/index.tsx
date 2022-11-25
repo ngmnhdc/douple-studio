@@ -95,7 +95,7 @@ const Checkout = () => {
                   </div>
                   {(paymentMethod === "bank-transfer") &&
                     <div className={styles["payment-method__content"]}>
-                      <p>The content of the transfer please fill out the syntax: <strong>"Phone number - Full name"</strong></p>
+                      <p>The content of the transfer please fill out the syntax: <strong>&quot;Phone number - Full name&quot;</strong></p>
                       <p>After the transaction confirmed successfully. DOUPLE will contact again during office hours, up to no more than 12 hours. Please pay attention to the phone to confirm the order.</p>
                       <p>Sincerely thank you for trusting and ordering at DOUPLE!</p>
                     </div>
@@ -109,6 +109,7 @@ const Checkout = () => {
             <div className={styles["cart-item-list"]}>
               {cartContextData?.cartItems?.map(({ uid, id, image, name, size, color, quantity, price, total_price }) => (
                 <SmallCartItem
+                  key={uid}
                   uid={uid}
                   id={id}
                   image={image}

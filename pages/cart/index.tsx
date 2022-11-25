@@ -1,12 +1,12 @@
 import React from 'react'
 import Link from 'next/link'
-import { v4 as uuidv4 } from 'uuid'
 
 // Import styles
 import styles from '../../styles/CartPage.module.scss'
 
 // Import components
 import CartItem from '../../components/CartItem'
+import EmptyCart from '../../components/EmptyCart'
 
 // Import contexts
 import { CartContext } from '../../contexts/cart'
@@ -16,7 +16,6 @@ import { ICartItem } from '../../utils/interfaces'
 
 // Import utils
 import { formatPrice } from '../../utils'
-import EmptyCart from '../../components/EmptyCart'
 
 const Cart = () => {
   const cartContextData = React.useContext(CartContext)
