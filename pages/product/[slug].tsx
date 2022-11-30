@@ -83,7 +83,7 @@ const ProductPage = ({ productDetail, relatedItems, recentlyViewed }: IProductPa
             <ul className={styles["image-carousel"]}>
               {productDetail.image_list && productDetail?.image_list.map((item, idx) => (
                 <li key={uuidv4()} className={styles["image-carousel-item"]}>
-                  <img src={item} />
+                  <img src={item} title="Image: pullandbear.com" />
                 </li>
               ))}
             </ul>
@@ -92,7 +92,7 @@ const ProductPage = ({ productDetail, relatedItems, recentlyViewed }: IProductPa
             <ul className={styles["main-image"]}>
               {productDetail.image_list && productDetail?.image_list.map((item, idx) => (
                 <li key={uuidv4()} className={styles["main-image-item"]}>
-                  <img src={item} />
+                  <img src={item} title="Image: pullandbear.com" />
                 </li>
               ))}
             </ul>

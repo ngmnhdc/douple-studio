@@ -16,7 +16,7 @@ const ProductCard = ({ id, name, image, price, url }: IProduct) => {
       href={`/product/${url}`}
     >
       <div className={styles["product-image"]}>
-        <img src={image} alt={name} />
+        <img src={image} alt={name} title="Image: pullandbear.com" />
       </div>
       <div className={styles["product-info"]}>
         <h3 className={styles["product-name"]}>{name}</h3>
